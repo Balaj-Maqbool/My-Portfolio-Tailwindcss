@@ -12,20 +12,17 @@
     --border-color: black;
     --theme-icon-color: rgb(6, 6, 6);
     --main-text-color: oklch(54.777% 0.28861 302.203);
-    --accent-color: rgba(230, 4, 4, 0.97) ;
-    --underline-color: oklch(58.031% 0.27806 305.754);
-
+    --accent-color: rgba(237, 1, 1, 0.97) ;
   }
 
   .dark {
-    --main-text-color: #03e7ea;
-    --accent-color: oklch(54.777% 0.28861 302.203) ;
+    --main-text-color: #03b0b3;
+    --accent-color: rgba(237, 1, 1, 0.97) ;
     --background-color: rgb(12, 12, 12);
     --text-color: rgb(246, 246, 246);
     --border-color: white;
     --theme-icon-color: rgb(245, 197, 3);
     --secondary-text-color: rgba(45, 205, 249, 0.879);
-    --underline-color: oklch(58.031% 0.27806 305.754);
     --meteor-color: linear-gradient(to bottom, transparent, white, white, white);
 
   }

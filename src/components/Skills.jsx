@@ -30,7 +30,7 @@ const Skills = () => {
                 }
             </div>
 
-            <div className=" grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4  px-5 xl:grid-cols-5  lg:px-24  md:py-5 lg:py-10 gap-2 sm:gap-5 md:gap-7 lg:gap-10">
+            <div className=" grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4  px-5 xl:grid-cols-5  lg:px-24 py-3  md:py-5 lg:py-10 gap-2 sm:gap-5 md:gap-7 lg:gap-10">
                 {
                     selectedSkills.map((skill, index) => (
                         <div key={`${index}-${currentCategory}`} className="  rounded-sm z-50  bg-blue-600/10  p-1.5 lg:p-3.5 sm:p-2.5  w-full  hover:scale-110 transition-all ease-in-out duration-400 animate-scale-out">

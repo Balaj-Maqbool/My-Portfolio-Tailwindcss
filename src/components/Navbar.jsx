@@ -24,7 +24,7 @@ const Navbar = () => {
         <nav className={`  ${hasScrolled ? "bg-primary/90 " : "bg-primary/10"} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50  `} >
             <Link className="cursor-default text-xl md:text-2xl xl:text-[1.8rem] 2xl:text-3xl" to={"/"}>
                 <span className="text-text  font-medium ">Balaj's</span>
-                <span className="text-red-600 font-bold">Portfolio<span className="text-accent text-2xl">.</span></span>
+                <span className="text-main/50 font-bold text-glow">Portfolio<span className="text-accent text-2xl">.</span></span>
             </Link>
 
             {/* {Desktop Navbar} */}
@@ -37,7 +37,7 @@ const Navbar = () => {
                             href={item.path}
                             onClick={() => setActiveLink(item.id)} // use `id`, not `name`
                             className={`border-b-2 transition-all duration-300 ease-in-out hover:scale-110 focus:scale-150 
-      ${activeLink === item.id ? "border-underline " : "border-transparent text-text/80 "}`}
+      ${activeLink === item.id ? "border-accent " : "border-transparent text-text/80 "}`}
                         >
                             {item.name}
                         </a>
