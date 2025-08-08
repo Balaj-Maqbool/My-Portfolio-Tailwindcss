@@ -19,7 +19,7 @@ const Skills = () => {
 
 
     return (
-        <section ref={ref} id='skills' className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} scroll-mt-[200px] lg:scroll-mt-[200px] transition-all ease-in-out duration-1000 p-5 relative min-h-screen pt-20 z-50`} >
+        <section ref={ref} id='skills' className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} scroll-mt-[250px] lg:scroll-mt-[200px] transition-all ease-in-out duration-1000 p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"My"} p2={"Skills"} />
 
             <div className=' lg:p-3 p-2 my-3  md:mt-2 flex flex-center space-x-0 sm:space-x-4 md:space-x-2 lg:space-x-9 '>
