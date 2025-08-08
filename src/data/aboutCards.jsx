@@ -24,6 +24,6 @@ export const aboutCards = [
 export const paragraphs =
     [
         <>A MERN Stack Developer passionate about building fast, clean, and responsive web apps. I enjoy turning ideas into seamless user experiences with MongoDB, Express.js, React.js, and Node.js.</>,
-        <>I recently completed a Frontend internship at <a href="https://appverse-technologies.com/balaj-maqbool" target="_blank" rel="noopener noreferrer"><span className='text-main' > Appverse Technologies</span></a>, where I worked on real-world React projects and sharpened my UI and collaboration skills.</>,
+        <>I recently completed a Frontend internship at <a href="https://appverse-technologies.com/balaj-maqbool" target="_blank" rel="noopener noreferrer"><span className='text-accent' > Appverse Technologies</span></a>, where I worked on real-world React projects and sharpened my UI and collaboration skills.</>,
         <>I'm now growing into backend development, building APIs and full-stack apps while continuously improving my code and problem-solving skills.</>
     ]
