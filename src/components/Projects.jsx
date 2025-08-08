@@ -22,12 +22,12 @@ const Projects = () => {
                 <p className='md:hidden'>Each Project, a Step Forward.</p>
             </div>
 
-            <div className='grid grid-cols-1 px-5  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 p-3 xs:px-5 sm:px-0 sm2:px-10 md:px-0 md2:px-10 lg:px-1 lg2:px-24' >
+            <div className='grid grid-cols-1 px-5  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 p-3 xs:px-10 sm:px-0 sm2:px-10 md:px-0 md2:px-10 lg:px-1 lg2:px-24' >
                 {
                     projects.map((project, index) => {
                         return (
                             <div key={index} className='flex flex-col ring-main active:ring-1 hover:ring-1 hover:scale-[1.03] active:scale-105 transition-all ease-in-out duration-300  z-100   rounded-md  bg-blue-600/10 '>
-                                <div className='w-full h-[100px] xs:h-[110px] sm:h-[100px] sm2:h-[120px] md:h-[110px] md2:h-[120px] lg:h-[130px]  xl:h-[140px]  rounded-t-md overflow-hidden ' >
+                                <div className='w-full h-[100px] xs:h-[120px] sm:h-[100px] sm2:h-[120px] md:h-[110px] md2:h-[120px] lg:h-[130px]  xl:h-[140px]  rounded-t-md overflow-hidden ' >
                                     <img className='w-full h-full  object-fit hover:scale-110 focus:scale-110  transition-all ease-in duration-500' src={project.imageAddress} alt={project.title} />
                                 </div>
                                 <div className='flex flex-center space-x-1.5 p-2 mt-2  text-[.55rem] md:text-[.7rem] text-text/60'>
