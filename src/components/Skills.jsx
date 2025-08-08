@@ -26,7 +26,7 @@ const Skills = () => {
             <div className=' lg:p-3 p-2 my-3  md:mt-2 flex flex-center space-x-0 sm:space-x-4 md:space-x-2 lg:space-x-9 '>
                 {
                     allCategories.map((category, index) => {
-                        return <button className={`skill-category-buttons ${category === currentCategory ? "outline-2 outline-accent text-text" : ""}`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} >{category}</button>
+                        return <button className={`skill-category-buttons ${category === currentCategory ? "border-b-2 border-b-accent text-text" : ""}`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} >{category}</button>
                     })
                 }
             </div>

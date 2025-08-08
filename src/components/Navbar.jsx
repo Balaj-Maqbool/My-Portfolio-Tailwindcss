@@ -36,8 +36,8 @@ const Navbar = () => {
                             key={key}
                             href={item.path}
                             onClick={() => setActiveLink(item.id)} // use `id`, not `name`
-                            className={`border-b-2 transition-all duration-300 ease-in-out hover:scale-110 focus:scale-150 
-      ${activeLink === item.id ? "border-accent " : "border-transparent text-text/80 "}`}
+                            className={`border-b-2 rounded-2xl px-3 p-1 transition-all duration-300 ease-in-out hover:scale-110 focus:scale-150 
+      ${activeLink === item.id ? "border-b-accent " : "border-transparent text-text/80 "}`}
                         >
                             {item.name}
                         </a>

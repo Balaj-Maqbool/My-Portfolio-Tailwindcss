@@ -22,7 +22,7 @@ const ProjectCard = ({ project }) => {
                 }
             </div>
             <h3 className='w-full text-center py-2 text-[.8rem] md:text-sm lg:text-[.9rem] xl:text[1rem] '>{project.title}</h3>
-            <p className=' px-5 h-18 sm:h-20 md:h-25  text-text/50 text-[.65rem] md:text-[.75rem] font-sans' >{project.description}</p>
+            <p className=' max-sm:mb-3 h-18 sm:h-20 md:h-25  text-text/50 text-[.65rem] md:text-[.75rem] font-sans' >{project.description}</p>
             <div className=' w-full flex px-3 pb-3 space-x-2.5'>
                 <a className='project-links' href={project.githubURL} target='blank'><Github size={20} /></a>
                 <a className='project-links' href={project.liveURL} target='blank' ><ExternalLink size={20} /></a>
