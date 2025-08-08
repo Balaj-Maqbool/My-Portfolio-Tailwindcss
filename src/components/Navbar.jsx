@@ -24,7 +24,13 @@ const Navbar = () => {
         <nav className={`  ${hasScrolled ? "bg-primary/90 " : "bg-primary/10"} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50  `} >
             <Link className="cursor-default text-xl md:text-2xl xl:text-[1.8rem] 2xl:text-3xl" to={"/"}>
                 <span className="text-text  font-medium ">Balaj's</span>
-                <span className="text-purple-600 font-bold text-glow">Portfolio<span className="text-accent text-2xl">.</span></span>
+                <span className="font-[750] text-glow" style={{
+                    background: "linear-gradient(150deg, rgb(103, 243, 224), rgb(25, 81, 81), rgb(23, 101, 101), rgb(5, 227, 243))",
+                    WebkitBackgroundClip: "text", 
+                    backgroundClip: "text",   
+                    WebkitTextFillColor:"transparent",       
+                    color: "transparent"
+                }}>Portfolio<span className="text-accent text-2xl">.</span></span>
             </Link>
 
             {/* {Desktop Navbar} */}
@@ -68,7 +74,7 @@ const Navbar = () => {
                     })
                 }
             </div>
-        </nav>
+        </nav >
     )
 }
 
