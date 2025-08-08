@@ -9,7 +9,7 @@ const Hero = () => {
                 <h2 className=' text-2xl sm:text-3xl md:text-[2rem] lg:text-5xl xl:text-6xl w-full  text-center'>
                     <span className='animate-fade-in'>Hi, </span>
                     <span className='animate-fade-in-delay-1'>I'm </span>
-                    <span className=' text-main font-bold dark:text-glow animate-fade-in-delay-2'>Balaj </span>
+                    <span className=' text-pink-600 font-bold dark:text-glow animate-fade-in-delay-2'>Balaj </span>
                     <span className='animate-fade-in-delay-3'>Maqbool</span>
                 </h2>
                 <div className='w-full text-[.7rem] sm:text-sm lg:text-[.925rem] xl:text-[1rem] text-center text-text'>
