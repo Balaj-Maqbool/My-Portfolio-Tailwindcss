@@ -50,7 +50,6 @@ const Navbar = () => {
             <div className="flex justify-center items-center space-x-1">
                 <ThemeToggler />
                 <button className="md:hidden z-110" onClick={() => { setIsMenuOpen(prev => !prev) }}>{isMenuOpen ? <X size={25} /> : <Menu />}</button>
-
             </div>
 
             {/* {Mobile Menu} */}
