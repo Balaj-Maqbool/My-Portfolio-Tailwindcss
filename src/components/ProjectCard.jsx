@@ -6,7 +6,7 @@ import useInView from '../hooks/IntersectionObserver'
 const ProjectCard = ({ project }) => {
     const { ref, isVisible } = useInView(.4)
     return (
-        <div ref={ref} className={`${isVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"}flex flex-col ring-accent active:ring-1 hover:ring-1 hover:scale-[1.03] active:scale-105 transition-all ease-in-out duration-1000  z-100   rounded-md  bg-blue-600/10 `}>
+        <div ref={ref} className={`${isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"}flex flex-col ring-accent active:ring-1 hover:ring-1 hover:scale-[1.03] active:scale-105 transition-all ease-in-out duration-500  z-100   rounded-md  bg-blue-600/10 `}>
             <div className='w-full h-[100px] xs:h-[115px] sm:h-[100px] sm2:h-[120px] md:h-[110px] md2:h-[120px] lg:h-[130px]  xl:h-[140px]  rounded-t-md overflow-hidden ' >
                 <img className='w-full h-full  object-fit hover:scale-110 focus:scale-110  transition-all ease-in duration-500' src={project.imageAddress} alt={project.title} />
             </div>

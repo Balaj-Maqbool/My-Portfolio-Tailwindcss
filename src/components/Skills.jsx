@@ -34,8 +34,8 @@ const Skills = () => {
                 {
                     selectedSkills.map((skill, index) => (
                         <div key={`${index}-${currentCategory}`} className="  rounded-sm z-50  bg-blue-600/10  p-1.5 lg:p-3.5 sm:p-2.5  w-full  hover:scale-110 transition-all ease-in-out duration-400 animate-scale-out">
-                            <h3 className="text-start text-[.55rem] font-mono sm:text-[.67rem] md:pb-2 md:text-sm ">{skill.name}</h3>
-                            {<div className="min-w-full mx-auto h-0.5 sm:h-1 md:h-1.5 xl-h-2 relative bg-main/20 origin-top   rounded-full ">
+                            <h3 className="text-start text-[.55rem] font-normal sm:text-[.67rem] md:pb-2 md:text-sm ">{skill.name}</h3>
+                            {<div className="min-w-full mx-auto h-0.5 sm:h-1 md:h-1.5 xl-h-2 relative bg-main/10 origin-top   rounded-full ">
                                 <div key={`${skill.name}`}
                                     className=" h-0.5 sm:h-1 md:h-1.5 xl-h-2 rounded-full animate-grow-bar "
                                     style={
@@ -47,7 +47,7 @@ const Skills = () => {
                                 </div>
                             </div>}
 
-                            <div className="text-end  text-[.55rem] font-thin sm:font-normal sm:text-[.67rem] md:text-sm">{skill.level}%</div>
+                            <div className="text-end  text-[.55rem] font-normal sm:font-normal sm:text-[.67rem] md:text-sm">{skill.level}%</div>
                         </div>
                     ))
                 }
