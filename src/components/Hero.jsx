@@ -22,11 +22,11 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className='flex  flex-center  w-full py-5 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
+            <div className='flex  flex-center  w-full py-3 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
                 <img src="assets/my_profile_pic_2.jpg" alt="Balaj Maqbool Profile Pic" className='profile-image'></img>
             </div>
 
-            <div className=' combo-animation  p-2 z-60  absolute  bottom-6  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
+            <div className=' combo-animation  p-2 z-60  absolute  bottom-4  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
                 <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text'>scroll</p>
                 <ArrowDown size={25} className='text-accent' />
             </div>
