@@ -14,7 +14,7 @@ const Hero = () => {
                 </h2>
                 <div className='w-full text-[.7rem] sm:text-sm lg:text-[.925rem] xl:text-[1rem] text-center text-text'>
                     <p className='animate-fade-in-delay-4 opacity-[.9] font-sans'>A <span className='text-accent'><strong className='font-normal'>MERN</strong></span> stack enthusiast turning ideas into full-stack apps.</p>
-                    <p className='animate-fade-in-delay-5 opacity-[.9] font-sans '>From <strong className='font-thin text-blue-600'>MongoDB</strong> to <strong className='font-thin text-blue-600'>React</strong> — I bring every layer to life.</p>
+                    <p className='animate-fade-in-delay-5 opacity-[.9] font-sans '>From <strong className='font-thin text-accent'>MongoDB</strong> to <strong className='font-thin text-accent'>React</strong> — I bring every layer to life.</p>
                     <p className='animate-fade-in-delay-6 opacity-[.9] font-sans'>Let’s <strong className='font-normal'>Code</strong> something amazing.</p>
                 </div>
                 <div className='animate-fade-in-button hover:scale-[1.05]  py-3 transition-all duration-300'>
