@@ -11,14 +11,15 @@
     --font-family: Arial, sans-serif, Verdana, Geneva, Tahoma;
     --border-color: black;
     --theme-icon-color: rgb(6, 6, 6);
-    --main-text-color: rgba(230, 4, 4, 0.97);
-    --accent-color: oklch(54.777% 0.28861 302.203);
+    --main-text-color: oklch(54.777% 0.28861 302.203);
+    --accent-color: rgba(230, 4, 4, 0.97) ;
     --underline-color: rgba(248, 30, 2, 0.879);
 
   }
 
   .dark {
-    --main-text-color: rgba(230, 4, 4, 0.97);
+    --main-text-color: oklch(54.777% 0.28861 302.203);
+    --accent-color: rgba(230, 4, 4, 0.97) ;
     --background-color: rgb(12, 12, 12);
     --text-color: rgb(246, 246, 246);
     --border-color: white;
