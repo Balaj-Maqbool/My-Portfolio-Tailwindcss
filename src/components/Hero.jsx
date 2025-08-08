@@ -14,19 +14,19 @@ const Hero = () => {
                 </h2>
                 <div className='w-full text-[.7rem] sm:text-sm lg:text-[.925rem] xl:text-[1rem] text-center text-text'>
                     <p className='animate-fade-in-delay-4 opacity-[.9] font-sans'>A <span className='text-accent'><strong className='font-normal'>MERN</strong></span> stack enthusiast turning ideas into full-stack apps.</p>
-                    <p className='animate-fade-in-delay-5 opacity-[.9] font-sans '>From <strong className=' text-accent'>MongoDB</strong> to <strong className=' text-accent'>React</strong> — I bring every layer to life.</p>
-                    <p className='animate-fade-in-delay-6 opacity-[.9] font-sans'>Let’s <strong className='font-normal'>Code</strong> something amazing.</p>
+                    <p className='animate-fade-in-delay-5 opacity-[.9] font-normal '>From <strong className=' text-main'>MongoDB</strong> to <strong className=' text-main'>React</strong> — I bring every layer to life.</p>
+                    <p className='animate-fade-in-delay-6 opacity-[.9] font-sans'>Let’s <strong className='font-normal text-accent'>Code</strong> something amazing.</p>
                 </div>
                 <div className='animate-fade-in-button hover:scale-[1.05]  py-3 transition-all duration-300'>
-                    <a className='cosmic-button-primary' href="#projects">View My Work</a>
+                    <a className='cosmic-button-primary ' href="#projects">View My Work</a>
                 </div>
             </div>
 
-            <div className='flex  flex-center  w-full py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
+            <div className='flex  flex-center  w-full py-5 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
                 <img src="assets/my_profile_pic_2.jpg" alt="Balaj Maqbool Profile Pic" className='profile-image'></img>
             </div>
 
-            <div className=' combo-animation  p-2 z-0  absolute   bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
+            <div className=' combo-animation  p-2 z-60  absolute  bottom-6  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
                 <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text'>scroll</p>
                 <ArrowDown size={25} className='text-accent' />
             </div>

@@ -270,7 +270,7 @@
   }
 
   .cosmic-button-primary {
-    @apply text-white md:p-2 flex flex-center md:px-3 p-2 px-2 xl:p-3.5 xl:px-5 text-sm lg:p-3 lg:px-4 rounded-4xl cursor-pointer font-medium;
+    @apply text-white md:p-2 flex flex-center md:px-3 p-2 px-3 xl:p-3.5 xl:px-5 text-sm lg:p-3 lg:px-4 rounded-4xl cursor-pointer font-medium;
 
     background: linear-gradient(-150deg, var(--color-main) 90%, rgb(75, 75, 254));
 
