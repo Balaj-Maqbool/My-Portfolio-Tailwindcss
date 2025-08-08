@@ -11,14 +11,14 @@
     --font-family: Arial, sans-serif, Verdana, Geneva, Tahoma;
     --border-color: black;
     --theme-icon-color: rgb(6, 6, 6);
-    --main-text-color: oklch(59.18% 0.27345 306.38);
-    --accent-color: rgba(248, 30, 2, 0.879);
+    --main-text-color: rgba(248, 30, 2, 0.879);
+    --accent-color: oklch(54.777% 0.28861 302.203);
     --underline-color: rgba(248, 30, 2, 0.879);
 
   }
 
   .dark {
-    --main-text-color: oklch(62.643% 0.2628 307.925);
+    --main-text-color: rgba(248, 30, 2, 0.879);
     --background-color: rgb(12, 12, 12);
     --text-color: rgb(246, 246, 246);
     --border-color: white;
@@ -71,13 +71,13 @@
 }
 
 @theme {
-  --breakpoint-xs:300px;
+  --breakpoint-xs: 300px;
   --breakpoint-sm: 410px;
-  --breakpoint-sm2:600px;
+  --breakpoint-sm2: 600px;
   --breakpoint-md: 700px;
-  --breakpoint-md2:860px;
+  --breakpoint-md2: 860px;
   --breakpoint-lg: 1000px;
-  --breakpoint-lg2:1200px;
+  --breakpoint-lg2: 1200px;
   --breakpoint-xl: 1400px;
   --breakpoint-2xl: 1800px;
 
@@ -90,7 +90,7 @@
   --color-main: var(--main-text-color);
   --color-underline: var(--underline-color);
   --color-accent: var(--accent-color);
-  --color-project:rgba(37, 99, 235, 0.1);
+  --color-project: rgba(37, 99, 235, 0.1);
 
   --animate-star: pulse-star ease-in-out infinite;
   --animate-meteor: meteor-shower linear infinite;
@@ -105,7 +105,7 @@
   --animate-fade-in-button: fade-in-btn ease-in-out 5.00s;
   --animate-fade-in-delay-7: fade-in ease-in-out 5.50s;
   --animate-fade-in-image: fade-in-img ease-in-out 6.00s;
-  
+
   --animate-card-bounce: bounce ease-in-out 5s infinite;
 
   --animate-grow-bar: grow 2s ease-in-out;
@@ -269,18 +269,19 @@
   }
 
   .cosmic-button-primary {
-    @apply text-white md:p-2  flex flex-center md:px-3 p-2 px-2 xl:p-3.5 xl:px-5 text-sm lg:p-3 lg:px-4 rounded-4xl cursor-pointer font-medium;
+    @apply text-white md:p-2 flex flex-center md:px-3 p-2 px-2 xl:p-3.5 xl:px-5 text-sm lg:p-3 lg:px-4 rounded-4xl cursor-pointer font-medium;
 
     background: linear-gradient(-150deg, var(--color-main) 90%, rgb(75, 75, 254));
 
-    &:hover,&:focus {
+    &:hover,
+    &:focus {
       background: linear-gradient(150deg, rgb(75, 75, 254), var(--color-main), var(--color-main), rgb(75, 75, 254));
     }
 
   }
 
   .cosmic-button-secondary {
-    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-primary flex flex-center border-main md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-main/20 focus:bg-main/20 ;
+    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-primary flex flex-center border-main md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-main/20 focus:bg-main/20;
   }
 
   .star {
