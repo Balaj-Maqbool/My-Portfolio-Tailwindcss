@@ -12,12 +12,12 @@
     --border-color: black;
     --theme-icon-color: rgb(6, 6, 6);
     --main-text-color: oklch(54.777% 0.28861 302.203);
-    --accent-color: rgba(237, 1, 1, 0.97) ;
+    --accent-color: rgba(254, 17, 17, 0.97) ;
   }
 
   .dark {
-    --main-text-color: #03b0b3;
-    --accent-color: rgba(237, 1, 1, 0.97) ;
+    --main-text-color: #01d9dc;
+    --accent-color: rgba(252, 32, 32, 0.97) ;
     --background-color: rgb(12, 12, 12);
     --text-color: rgb(246, 246, 246);
     --border-color: white;
