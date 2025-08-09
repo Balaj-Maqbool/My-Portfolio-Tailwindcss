@@ -5,7 +5,7 @@ const Hero = () => {
 
     return (
         <section id='hero' className={` min-h-screen min-w-screen z-50 md:min-h-screen  flex flex-col flex-center md:flex-row `}>
-            <div className=' min-h-screen  min-w-screen  z-10 pb-10 md:py-0 border-2 flex flex-col justify-start items-center md:flex-center space-y-3 '>
+            <div className=' min-h-screen  min-w-screen pt-30 sm:pt-0 z-10 pb-10 md:py-0  flex flex-col justify-start items-center sm:flex-center space-y-3 '>
                 <h2 className=' text-[1.9rem] sm:text-3xl md:text-[2rem] lg:text-5xl xl:text-6xl w-full  text-center'>
                     <span className='animate-fade-in'>Hi, </span>
                     <span className='animate-fade-in-delay-1'>I'm </span>
