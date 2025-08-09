@@ -12,7 +12,7 @@ const Hero = () => {
                     <span  className=' gradient-text-blue text-[1.7rem] sm:text-[1.92rem] lg:text-[3.3rem]  md:text-[2.2rem]  xl:text-[4rem] font-bold  animate-fade-in-delay-2  '>Balaj </span>
                     <span className='animate-fade-in-delay-3'>Maqbool</span>
                 </h2>
-                <div className='w-full text-[.8rem] lg:text-[1rem] xl:text-[1.1rem] text-center text-text'>
+                <div className='w-full text-[.8rem] lg:text-[1rem] xl:text-[1.1rem] flex flex-col text-center text-text'>
                     <p className='animate-fade-in-delay-4 opacity-[.9] font-sans'>A <span className='gradient-text-pink'><strong className='font-semibold'>MERN</strong></span> stack enthusiast turning ideas into full-stack apps.</p>
                     <p className='animate-fade-in-delay-5 opacity-[.9] font-normal '>From <strong className='  gradient-text-pink font-semibold'>MongoDB</strong> to <strong className=' gradient-text-pink font-semibold'>React</strong> — I bring every layer to life.</p>
                     <p className='animate-fade-in-delay-6 opacity-[.9] font-sans'>Let’s <strong className='font-normal '>Code</strong> something <span className='gradient-text-pink font-semibold'>AmaZiNg</span>.</p>
