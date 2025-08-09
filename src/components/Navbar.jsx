@@ -20,17 +20,24 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { hasScrolled } = useContext(ScrollContext)
 
+    useEffect(() => {
+        if (isMenuOpen)
+            document.documentElement.classList.add("no-scroll")
+        else
+            document.documentElement.classList.remove("no-scroll")
+    }, [isMenuOpen])
+
     return (
         <nav className={`  ${hasScrolled ? "bg-primary/90 " : ""} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50  `} >
             <Link className="cursor-default text-[1.3rem] md:text-2xl lg:text-[1.7rem] xl:text-[1.9rem] 2xl:text-3xl" to={"/"}>
                 <span className="text-text font-medium ">Balaj's</span>
                 <span className="font-[750] text-glow" style={{
                     background: "linear-gradient(150deg, rgb(103, 243, 224), rgb(25, 81, 81), rgb(23, 101, 101), rgb(5, 227, 243))",
-                    WebkitBackgroundClip: "text", 
-                    backgroundClip: "text",   
-                    WebkitTextFillColor:"transparent",       
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                     color: "transparent"
-                }}>Portfolio<span className="text-2xl" style={{color:"oklch(57.7% 0.245 27.325)"}}>.</span></span>
+                }}>Portfolio<span className="text-2xl" style={{ color: "oklch(57.7% 0.245 27.325)" }}>.</span></span>
             </Link>
 
             {/* {Desktop Navbar} */}
@@ -55,7 +62,7 @@ const Navbar = () => {
 
             <div className="flex justify-center items-center space-x-1">
                 <ThemeToggler />
-                <button className="md:hidden z-110" onClick={() => { setIsMenuOpen(prev => !prev) }}>{isMenuOpen ? <X size={25} /> : <Menu  />}</button>
+                <button className="md:hidden z-110" onClick={() => { setIsMenuOpen(prev => !prev) }}>{isMenuOpen ? <X size={25} /> : <Menu />}</button>
             </div>
 
             {/* {Mobile Menu} */}

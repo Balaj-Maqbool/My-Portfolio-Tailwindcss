@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import LoadingScreen from './LoadingScreen.jsx';  // adjust path if needed
+
+// your other imports
 import StarBackground from "../components/BackGround.jsx"
 import Navbar from '../components/Navbar.jsx';
 import Hero from '../components/Hero.jsx';
@@ -8,33 +12,39 @@ import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx';
 
 
-
-
-
 const Home = () => {
+  const [showLoading, setShowLoading] = useState(false);
+
+  useEffect(() => {
+    // Simulate loading for 5 seconds, then hide loading screen
+    const timer = setTimeout(() => setShowLoading(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className=' min-h-screen text-text font-family overflow-hidden'>
-      <StarBackground />
+    <>
+      {showLoading && <LoadingScreen showLoading={showLoading} setShowLoading={setShowLoading} />}
 
-      <header>
-        <Navbar />
-      </header>
+      {!showLoading && (
+        <div className='min-h-screen text-text font-family overflow-hidden'>
+          <StarBackground />
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
+      )}
+    </>
+  );
+};
 
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-
-      <footer>
-        <Footer />
-      </footer>
-
-    </div>
-  )
-}
-
-export default Home
+export default Home;

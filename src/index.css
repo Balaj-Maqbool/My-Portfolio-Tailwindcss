@@ -15,6 +15,10 @@
     --accent-color: rgba(254, 17, 17, 0.97);
   }
 
+  .no-scroll{
+    overflow: hidden;
+  }
+
   :root {
     --main-text-color: #02d4d8;
     --accent-color: rgba(0, 150, 202, 1);
