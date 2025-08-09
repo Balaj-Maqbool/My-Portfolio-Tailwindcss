@@ -76,8 +76,8 @@ const Navbar = () => {
                             href={item.path}
                             className="  w-full flex flex-center space-x-1.5 focus:text-accent focus:scale-[1.1]  text-text  transition-colors duration-75 ease-in-out"
                         >
-                            <span className=" w-1/2 h-full flex justify-end items-center text-[oklch(57.7%_0.245_27.325)] ">{item.icon}</span>
-                            <span className=" w-1/2  h-full flex justify-start items-center">{item.name}</span></a>
+                            <span className=" w-[47%] h-full flex justify-end items-center text-[oklch(57.7%_0.245_27.325)] ">{item.icon}</span>
+                            <span className=" w-[53%]  h-full flex justify-start items-center">{item.name}</span></a>
                     })
                 }
             </div>
