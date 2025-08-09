@@ -29,7 +29,7 @@ const socialLinks = [
 
 const Footer = () => {
     return (
-        <div className={` w-full  pt-2 pb-8 md:pb-10 flex flex-col ' id="footer" `}>
+        <div className={` w-full  pt-2  pb-10 flex flex-col ' id="footer" `}>
             <div className="flex flex-center space-x-5">
                 {
                     socialLinks.map((link, index) => {

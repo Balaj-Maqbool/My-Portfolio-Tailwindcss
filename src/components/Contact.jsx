@@ -64,7 +64,7 @@ const Contact = () => {
         <section ref={ref} id='contact' className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} scroll-mt-[280px] lg:scroll-mt-[200px] transition-all ease-in-out duration-1000 p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"Get In"} p2={"Touch"} />
 
-            <div className='w-full text-[0.75rem] sm:text-sm my-5 space-y-1 opacity-90 xl:text-[1rem] text-center gradient-te'>
+            <div className='w-full text-[0.8rem] sm:text-sm my-5 space-y-1 opacity-90 xl:text-[1rem] text-center gradient-te'>
                 <div className='hidden md:flex flex-center '>
                     <p className='mr-1'>Looking for a developer who blends creativity with clean code? Let’s chat </p>
                     <span><TextIcon strokeWidth={2.5} color='oklch(57.7% 0.245 27.325)' size={20} /></span>
@@ -94,7 +94,7 @@ const Contact = () => {
                                         </div>
                                         <div className='md:min-w-[70%] flex flex-col justify-center  items-start'>
                                             <h3 className='sm:hidden text-[.9rem] md:inline-block'>{info.title}</h3>
-                                            <p className='font-normal text-[.73rem] md:text-sm text-text/70 hover:scale-[1.05] active:scale-105 hover:gradient-text-blue transition-all ease-in-out duration-200'>{info.value}</p>
+                                            <p className='font-normal text-[.73rem] md:text-sm text-text/60 hover:scale-[1.05] active:scale-105 hover:gradient-text-blue transition-all ease-in-out duration-200'>{info.value}</p>
                                         </div>
                                     </a>
                                 )

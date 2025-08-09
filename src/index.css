@@ -279,7 +279,7 @@
   }
 
   .cosmic-button-secondary {
-    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-primary flex flex-center border-accent md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-accent/20 focus:bg-accent/20;
+    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-primary flex flex-center border-main md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-accent/20 focus:bg-accent/20;
   }
 
   .star {
