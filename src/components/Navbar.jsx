@@ -23,7 +23,7 @@ const Navbar = () => {
     return (
         <nav className={`  ${hasScrolled ? "bg-primary/90 " : "bg-primary/10"} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50  `} >
             <Link className="cursor-default text-xl md:text-2xl xl:text-[1.8rem] 2xl:text-3xl" to={"/"}>
-                <span className="text-text  font-medium ">Balaj's</span>
+                <span className="text-text font-medium ">Balaj's</span>
                 <span className="font-[750] text-glow" style={{
                     background: "linear-gradient(150deg, rgb(103, 243, 224), rgb(25, 81, 81), rgb(23, 101, 101), rgb(5, 227, 243))",
                     WebkitBackgroundClip: "text", 
@@ -55,7 +55,7 @@ const Navbar = () => {
 
             <div className="flex justify-center items-center space-x-1">
                 <ThemeToggler />
-                <button className="md:hidden z-110" onClick={() => { setIsMenuOpen(prev => !prev) }}>{isMenuOpen ? <X size={25} /> : <Menu />}</button>
+                <button className="md:hidden z-110" onClick={() => { setIsMenuOpen(prev => !prev) }}>{isMenuOpen ? <X size={25} /> : <Menu clas />}</button>
             </div>
 
             {/* {Mobile Menu} */}

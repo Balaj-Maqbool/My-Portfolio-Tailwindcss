@@ -4,12 +4,12 @@ const Hero = () => {
 
 
     return (
-        <section  id='hero' className={` min-h-screen min-w-screen z-50 md:min-h-screen  flex flex-col flex-center md:flex-row `}>
+        <section id='hero' className={` min-h-screen min-w-screen z-50 md:min-h-screen  flex flex-col flex-center md:flex-row `}>
             <div className=' md:min-h-screen  min-w-screen md:min-w-[60%] z-10 pb-10 md:py-0  flex flex-col justify-center items-center space-y-3 '>
                 <h2 className=' text-2xl sm:text-3xl md:text-[2rem] lg:text-5xl xl:text-6xl w-full  text-center'>
                     <span className='animate-fade-in'>Hi, </span>
                     <span className='animate-fade-in-delay-1'>I'm </span>
-                    <span className=' text-pink-500 font-bold dark:text-glow animate-fade-in-delay-2'>Balaj </span>
+                    <span  className=' gradient-text-blue text-[1.7rem] sm:text-[1.92rem] lg:text-[3.3rem]  md:text-[2.2rem]  xl:text-[4rem] font-bold  animate-fade-in-delay-2  '>Balaj </span>
                     <span className='animate-fade-in-delay-3'>Maqbool</span>
                 </h2>
                 <div className='w-full text-[.7rem] sm:text-sm lg:text-[.925rem] xl:text-[1rem] text-center text-text'>
