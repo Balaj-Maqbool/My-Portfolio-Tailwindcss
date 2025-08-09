@@ -22,8 +22,8 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className='flex  flex-center  w-full py-1.5 sm:py-3 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
-                <img src="assets/my_profile_pic_2.jpg" alt="Balaj Maqbool Profile Pic" className='profile-image'></img>
+            <div className='flex  flex-center bg-transparent w-full py-1.5 sm:py-3 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
+                <img src="/my-pics/img-07.jpg" alt="Balaj Maqbool Profile Pic" className='profile-image object-cover bg-transparent'></img>
             </div>
 
             <div className=' combo-animation  p-2 z-60  absolute  bottom-2.5  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
