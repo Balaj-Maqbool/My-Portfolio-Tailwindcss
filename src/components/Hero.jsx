@@ -5,7 +5,7 @@ const Hero = () => {
 
     return (
         <section id='hero' className={` min-h-screen min-w-screen z-50 md:min-h-screen  flex flex-col flex-center md:flex-row `}>
-            <div className=' md:min-h-screen  min-w-screen md:min-w-[60%] z-10 pb-10 md:py-0  flex flex-col justify-center items-center space-y-3 '>
+            <div className=' md:min-h-screen  min-w-screen  z-10 pb-10 md:py-0  flex flex-col justify-center items-center space-y-3 '>
                 <h2 className=' text-[1.9rem] sm:text-3xl md:text-[2rem] lg:text-5xl xl:text-6xl w-full  text-center'>
                     <span className='animate-fade-in'>Hi, </span>
                     <span className='animate-fade-in-delay-1'>I'm </span>
@@ -22,9 +22,9 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className='flex  flex-center bg-transparent w-full py-1.5 sm:py-3 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
+            {/* <div className='flex  flex-center bg-transparent w-full py-1.5 sm:py-3 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
                 <img src="/img-07.jpg" alt="Balaj Maqbool Profile Pic" className='profile-image object-cover bg-transparent'></img>
-            </div>
+            </div> */}
 
             <div className=' combo-animation  p-2 z-60  absolute  bottom-2.5  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
                 <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text '>scroll</p>

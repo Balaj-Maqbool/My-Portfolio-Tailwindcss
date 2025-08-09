@@ -28,7 +28,7 @@ const Navbar = () => {
     }, [isMenuOpen])
 
     return (
-        <nav className={`  ${hasScrolled ? "bg-primary/90 " : ""} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50  `} >
+        <nav className={`  ${hasScrolled ? "bg-primary/90 " : ""} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50 animate-fade-in-delay-7 `} >
             <Link className="cursor-default text-[1.3rem] md:text-2xl lg:text-[1.7rem] xl:text-[1.9rem] 2xl:text-3xl" to={"/"}>
                 <span className="text-text font-medium ">Balaj's</span>
                 <span className="font-[750] text-glow" style={{
