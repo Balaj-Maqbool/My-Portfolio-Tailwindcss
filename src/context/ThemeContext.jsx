@@ -6,7 +6,7 @@ export const ThemeContext = createContext(null)
 export const ThemeProvider = ({ children }) => {
 
 
-    const [isDark, setIsDark] = useState(localStorage.getItem("theme") === "dark" || true)
+    const [isDark, setIsDark] = useState(true)
 
     useEffect(() => {
         if (isDark) document.documentElement.classList.add("dark")

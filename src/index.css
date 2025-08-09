@@ -5,7 +5,7 @@
 
 
 @layer base {
-  :root {
+  .light {
     --background-color: rgb(255, 255, 255);
     --text-color: rgb(11, 11, 11);
     --font-family: Arial, sans-serif, Verdana, Geneva, Tahoma;
@@ -15,14 +15,13 @@
     --accent-color: rgba(254, 17, 17, 0.97);
   }
 
-  .dark {
-    --main-text-color: #09f5f9;
-    --accent-color: rgba(252, 32, 32, 0.97);
+  :root {
+    --main-text-color: #02d4d8;
+    --accent-color: rgba(0, 150, 202, 1);
     --background-color: rgb(12, 12, 12);
     --text-color: rgb(246, 246, 246);
-    --border-color: white;
+    
     --theme-icon-color: rgb(245, 197, 3);
-    --secondary-text-color: rgba(45, 205, 249, 0.879);
     --meteor-color: linear-gradient(to bottom, transparent, white, white, white);
 
   }
@@ -259,12 +258,12 @@
   }
 
   .skill-category-buttons {
-    @apply h-auto w-auto p-1 px-2.5 lg:p-1.5 lg:px-3 xl:px-3.5 xl:p-2 mr-1 text-[.67rem] sm:text-[.8rem] md:text-sm capitalize text-text font-semibold rounded-4xl transition-colors ease-in-out duration-500;
+    @apply h-auto w-auto p-1 px-2.5 lg:p-1.5 lg:px-3 xl:px-3.5 xl:p-2 mr-1 text-[.75rem] sm:text-[.8rem] hover:scale-[1.15] md:text-sm capitalize  font-semibold  transition-all ease-in-out duration-500;
 
   }
 
   .about-card {
-    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-main/50 rounded-sm hover:scale-[.9] transition-all ease-linear duration-500 animate-card-bounce;
+    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-main/50 rounded-sm hover:scale-[.9] active:scale-90 transition-all ease-linear duration-500 animate-card-bounce;
   }
 
   .cosmic-button-primary {
@@ -274,13 +273,13 @@
 
     &:hover,
     &:focus {
-      background: linear-gradient(-150deg, rgb(100, 210, 211) 90%, rgb(11, 184, 173));
+      background: linear-gradient(150deg, rgb(25, 81, 81), rgb(49, 189, 170), rgb(6, 134, 143), rgb(23, 101, 101));
     }
 
   }
 
   .cosmic-button-secondary {
-    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-primary flex flex-center border-main md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-main/20 focus:bg-main/20;
+    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-primary flex flex-center border-accent md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-accent/20 focus:bg-accent/20;
   }
 
   .star {
@@ -298,12 +297,12 @@
   }
 
   .profile-image {
-    @apply h-52 w-52 md:h-[16rem] md:w-[16rem] lg:h-[19rem] lg:w-[19rem] xl:h-80 xl:w-80 overflow-hidden rounded-full z-10 object-cover animate-fade-in-image shadow-lg hover:scale-[.95] transition-all duration-700 ease-out;
+    @apply h-52 w-52 md:h-[16rem] md:w-[16rem] lg:h-[19rem] lg:w-[19rem] xl:h-80 xl:w-80 overflow-hidden rounded-full z-10 object-cover animate-fade-in-image shadow-lg hover:scale-[.95] active:scale-[.95] focus:scale-[.95] transition-all duration-700 ease-out;
 
   }
 
   .social-icon-hover {
-    @apply size-5 sm:size-6 lg:size-7 xl:size-8 hover:text-accent hover:scale-115 transition-all ease-in-out duration-100;
+    @apply size-6 lg:size-7 xl:size-8 hover:text-accent hover:scale-115 transition-all ease-in-out duration-100;
   }
 
   .project-links {

@@ -25,12 +25,12 @@ const Skills = () => {
             <div className=' lg:p-3 p-2 my-3  md:mt-2 flex flex-center space-x-0 sm:space-x-4 md:space-x-2 lg:space-x-9 '>
                 {
                     allCategories.map((category, index) => {
-                        return <button className={`skill-category-buttons ${category === currentCategory ? "border-b-2 border-b-accent text-text" : ""}`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} >{category}</button>
+                        return <button className={`skill-category-buttons`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} ><span className={` ${currentCategory===category?"border-b-2 border-b-accent":""} pb-1 px-1 gradient-text-grey `}>{category}</span></button>
                     })
                 }
             </div>
 
-            <div className=" grid grid-cols-1 sm:grid-cols-3  md:grid-cols-4  px-12 sm:px-0 xl:grid-cols-5  lg:px-24  md:py-5 lg:py-10 max-sm:gap-y-5  gap-2 sm:gap-5 md:gap-7 lg:gap-10">
+            <div className=" grid grid-cols-1 sm:grid-cols-3  md:grid-cols-4  px-8 sm:px-0 xl:grid-cols-5  lg:px-24  md:py-5 lg:py-10 max-sm:gap-y-5  gap-2 sm:gap-5 md:gap-7 lg:gap-10">
                 {
                     selectedSkills.map((skill, index) => (
                         <SkillCards key={`${index}-${currentCategory}`} skill={skill} />
