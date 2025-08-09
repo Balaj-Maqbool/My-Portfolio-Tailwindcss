@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
 import ThemeToggler from "../components/ThemeToggler.jsx"
-import { Contact2, Home, Laptop2, Menu, Code2, X } from "lucide-react"
+import { Contact2, Home, Laptop2, Menu, Code2, X, } from "lucide-react"
 import { GoPerson } from "react-icons/go";
+import { RiLinksFill } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react"
 import { ScrollContext } from "../context/ScrollContext.jsx";
 
@@ -79,7 +80,14 @@ const Navbar = () => {
                             <span className=" w-[47%] h-full flex justify-end items-center text-[oklch(57.7%_0.245_27.325)] ">{item.icon}</span>
                             <span className=" w-[53%]  h-full flex justify-start items-center">{item.name}</span></a>
                     })
-                }
+                } <a
+                    onClick={() => { setIsMenuOpen(prev => !prev) }}
+                    href="#footer"
+                    className="  w-full flex flex-center space-x-1.5 focus:text-accent focus:scale-[1.1]  text-text  transition-colors duration-75 ease-in-out">
+                    <span className=" w-[47%] h-full flex justify-end items-center text-[oklch(57.7%_0.245_27.325)] "><RiLinksFill size={20} /></span>
+                    <span className=" w-[53%]  h-full flex justify-start items-center">Social Links</span>
+                </a>
+
             </div>
         </nav >
     )
