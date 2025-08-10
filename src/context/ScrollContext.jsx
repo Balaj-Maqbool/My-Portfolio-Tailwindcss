@@ -9,7 +9,7 @@ export const ScrollProvider = ({ children }) => {
 
     const handleScroll = () => {
         setHasScrolled(window.scrollY > 100);
-        setIsVisible(window.pageYOffset > 900);
+        setIsVisible(window.scrollY > 900);
     }
 
     useEffect(() => {
