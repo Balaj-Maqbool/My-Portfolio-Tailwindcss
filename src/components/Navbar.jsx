@@ -20,6 +20,7 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState("home");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { hasScrolled } = useContext(ScrollContext)
+    
 
     useEffect(() => {
         if (isMenuOpen)
@@ -75,16 +76,16 @@ const Navbar = () => {
                             onClick={() => { setIsMenuOpen(prev => !prev) }}
                             key={key}
                             href={item.path}
-                            className="  w-full flex flex-center space-x-1.5 focus:text-accent focus:scale-[1.1]  text-text  transition-colors duration-75 ease-in-out"
+                            className="  w-full flex flex-center space-x-1.5  focus:scale-[1.1]  text-text  transition-colors duration-75 ease-in-out"
                         >
-                            <span className=" w-[47%] h-full flex justify-end items-center text-primary ">{item.icon}</span>
+                            <span className=" w-[47%] h-full flex justify-end items-center text-accent ">{item.icon}</span>
                             <span className=" w-[53%]  h-full flex justify-start items-center">{item.name}</span></a>
                     })
                 } <a
                     onClick={() => { setIsMenuOpen(prev => !prev) }}
                     href="#footer"
-                    className="  w-full flex flex-center space-x-1.5 focus:text-accent focus:scale-[1.1]  text-text  transition-colors duration-75 ease-in-out">
-                    <span className=" w-[47%] h-full flex justify-end items-center text-primary "><RiLinksFill size={20} /></span>
+                    className="  w-full flex flex-center space-x-1.5    text-text  transition-colors duration-75 ease-in-out">
+                    <span className=" w-[47%] h-full flex justify-end items-center text-accent "><RiLinksFill size={20} /></span>
                     <span className=" w-[53%]  h-full flex justify-start items-center">Social Links</span>
                 </a>
 

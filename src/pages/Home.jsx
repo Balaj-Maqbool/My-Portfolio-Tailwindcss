@@ -10,6 +10,7 @@ import Skills from '../components/Skills.jsx';
 import Projects from '../components/Projects.jsx';
 import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx';
+import BackToTop from '../components/BackToTop.jsx';
 
 
 const Home = () => {
@@ -41,6 +42,7 @@ const Home = () => {
           <footer>
             <Footer />
           </footer>
+          <BackToTop />
         </div>
       )}
     </>

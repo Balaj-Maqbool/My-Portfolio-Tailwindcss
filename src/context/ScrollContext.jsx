@@ -5,9 +5,11 @@ export const ScrollContext = createContext(null)
 export const ScrollProvider = ({ children }) => {
 
     const [hasScrolled, setHasScrolled] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const handleScroll = () => {
         setHasScrolled(window.scrollY > 100);
+        setIsVisible(window.pageYOffset > 900);
     }
 
     useEffect(() => {
@@ -23,7 +25,7 @@ export const ScrollProvider = ({ children }) => {
 
 
     return (
-        <ScrollContext.Provider value={{hasScrolled,setHasScrolled}}>
+        <ScrollContext.Provider value={{ hasScrolled, setHasScrolled, isVisible,setIsVisible }}>
             {children}
         </ScrollContext.Provider>
     )
