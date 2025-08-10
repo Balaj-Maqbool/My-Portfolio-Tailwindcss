@@ -21,7 +21,7 @@ const Projects = () => {
 
             </div>
 
-            <div className='grid grid-cols-1 px-5  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 p-3 xs:px-7 sm:px-0 sm2:px-10 md:px-0 md2:px-10 lg:px-1 lg2:px-24' >
+            <div className='grid grid-cols-1 px-5  sm:px-16  sm2:gap-x-6 sm2:grid-cols-2 md:px-24 md2:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 p-3 xs:px-7  md2:px-10 lg:px-1 lg2:px-24' >
                 {
                     projects.map((project, index) => {
                         return (
