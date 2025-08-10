@@ -298,7 +298,7 @@
   }
 
   .mobile-menu {
-    @apply bg-primary text-sm sm:text-[1rem] md:hidden flex flex-col h-screen w-screen justify-baseline items-center space-y-7 absolute top-0 px-0 py-16  transition-all ease-in-out duration-[1s];
+    @apply  text-sm sm:text-[1rem] md:hidden flex flex-col h-screen w-screen justify-baseline items-center space-y-7 absolute top-0 px-0 py-16  transition-all ease-in-out duration-[1s];
   }
 
   .profile-image {

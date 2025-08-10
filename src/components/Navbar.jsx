@@ -67,7 +67,7 @@ const Navbar = () => {
             </div>
 
             {/* {Mobile Menu} */}
-            <div className={`mobile-menu ${isMenuOpen ? "z-100 opacity-100 bg-primary/10 backdrop-blur-sm pointer-events-auto  " : " opacity-0 pointer-events-none z-30 -translate-y-full"}`}>
+            <div className={`mobile-menu ${isMenuOpen ? "z-100 opacity-100 bg-background/10 backdrop-blur-sm pointer-events-auto  " : " opacity-0 pointer-events-none z-30 -translate-y-full"}`}>
 
                 {
                     navItems.map((item, key) => {
@@ -77,14 +77,14 @@ const Navbar = () => {
                             href={item.path}
                             className="  w-full flex flex-center space-x-1.5 focus:text-accent focus:scale-[1.1]  text-text  transition-colors duration-75 ease-in-out"
                         >
-                            <span className=" w-[47%] h-full flex justify-end items-center text-[oklch(57.7%_0.245_27.325)] ">{item.icon}</span>
+                            <span className=" w-[47%] h-full flex justify-end items-center text-primary ">{item.icon}</span>
                             <span className=" w-[53%]  h-full flex justify-start items-center">{item.name}</span></a>
                     })
                 } <a
                     onClick={() => { setIsMenuOpen(prev => !prev) }}
                     href="#footer"
                     className="  w-full flex flex-center space-x-1.5 focus:text-accent focus:scale-[1.1]  text-text  transition-colors duration-75 ease-in-out">
-                    <span className=" w-[47%] h-full flex justify-end items-center text-[oklch(57.7%_0.245_27.325)] "><RiLinksFill size={20} /></span>
+                    <span className=" w-[47%] h-full flex justify-end items-center text-primary "><RiLinksFill size={20} /></span>
                     <span className=" w-[53%]  h-full flex justify-start items-center">Social Links</span>
                 </a>
 
