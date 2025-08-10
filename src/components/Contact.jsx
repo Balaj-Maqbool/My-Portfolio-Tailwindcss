@@ -45,16 +45,16 @@ const Contact = () => {
 
         setTimeout(() => {
             toast({
-                title: "Message Sent !",
-                description: <div className=''>Hi <span className='capitalize text-accent'>{name}</span>, <span className='hidden md:inline'>I have received Your Message,</span> I'll get back to you Soon</div>,
-                className: "text-text border-accent bg-primary"
+                title: <span className='font-sans font-semibold gradient-text-pink'>Message Sent !</span>,
+                description: <div className=''>Hi <span className='capitalize font-semibold font-sans  gradient-text-blue'>{name}</span>, <span className='hidden md:inline'>I have received Your Message,</span> I'll get back to you Soon</div>,
+                className: "text-text border-2 border-primary bg-background"
             });
 
 
             setSendingMessage(false)
-            SetName("")
-            SetEmail("")
-            SetMessage("")
+            // SetName("")
+            // SetEmail("")
+            // SetMessage("")
         }, 1000);
 
     }
@@ -64,17 +64,17 @@ const Contact = () => {
         <section ref={ref} id='contact' className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} scroll-mt-[280px] lg:scroll-mt-[200px] transition-all ease-in-out duration-1000 p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"Get In"} p2={"Touch"} />
 
-            <div className='w-full text-[0.8rem] sm:text-sm my-5 space-y-1 opacity-90 xl:text-[1rem] text-center gradient-te'>
+            <div className='w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem] opacity-90 xl:text-[1rem] text-center gradient-text-grey'>
                 <div className='hidden md:flex flex-center '>
-                    <p className='mr-1'>Looking for a developer who blends creativity with clean code? Let’s chat </p>
-                    <span><TextIcon strokeWidth={2.5} color='oklch(57.7% 0.245 27.325)' size={20} /></span>
+                    <p className='mr-1'>Looking for a <strong className='gradient-text-pink'>developer</strong> who blends creativity with <strong className='gradient-text-pink'>clean code</strong>? Let’s chat </p>
+                    <span><TextIcon strokeWidth={2.5} className='text-accent' size={20} /></span>
                 </div>
-                <p className='hidden md:inline-block'>Let’s turn your next idea into a pixel-perfect experience.</p>
+                <p className='hidden md:inline-block'>Let’s turn your next <strong className='gradient-text-pink'>idea</strong> into a <strong className='gradient-text-pink'>pixel-perfect</strong> experience.</p>
 
-                <p className='md:hidden'>Open to freelance, collabs, or just good tech talks.</p>
+                <p className='md:hidden'>Open to <strong className='gradient-text-pink'>freelance</strong>, <strong className='gradient-text-pink' >collabs</strong>, or just good <strong className='gradient-text-pink'>tech</strong> talks.</p>
                 <div className='md:hidden flex flex-center '>
-                    <p className='mr-1'>Drop a message. Let’s chat</p>
-                    <span><TextIcon color='oklch(57.7% 0.245 27.325)' strokeWidth={3} size={16} /></span>
+                    <p className='mr-1'>Drop a message. <strong className='gradient-text-pink'>Let’s chat</strong></p>
+                    <span><TextIcon className='text-accent' strokeWidth={3} size={16} /></span>
                 </div>
             </div>
 
@@ -89,7 +89,7 @@ const Contact = () => {
                             contactInfo.map((info) => {
                                 return (
                                     <a key={info.id} href={info.link} target='blank' rel='noopener noreferrer' className=' z-50 flex justify-start sm:flex-col md:flex-row sm:h-full  w-[90%] space-x-3 sm:space-x-0  md:w-[90%] lg:w-[65%]  p-2'>
-                                        <div className=' h-6 w-6 sm:w-5 sm:h-5 md:w-auto md:h-auto flex mr-5 flex-center md:p-4  sm:mr-2 md:mr-5 text-main hover:text-main/70'>
+                                        <div className=' h-6 w-6 sm:w-5 sm:h-5 md:w-auto md:h-auto flex mr-5 flex-center md:p-4  sm:mr-2 md:mr-5 text-primary hover:text-primary/70'>
                                             {info.icon}
                                         </div>
                                         <div className='md:min-w-[70%] flex flex-col justify-center  items-start'>
@@ -104,7 +104,7 @@ const Contact = () => {
                 </div>
 
                 <div className='flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]  '>
-                    <div className='flex flex-col items-center space-y-3  h-full w-full rounded-md py-5 lg:py-7 bg-blue-700/10 '>
+                    <div className='flex flex-col items-center space-y-3  h-full w-full rounded-md py-5 lg:py-7 bg-project '>
                         <h3 className='text-text font-sans text-[1.15rem] md:text-[1.35rem]'>Send a Message</h3>
                         <form className='text-sm w-full h-full px-7 pt-3 flex flex-col space-y-6' onSubmit={handleSubmit}>
                             <input className='form-input' type="text" required placeholder='Your Name' value={name} onChange={(e) => { SetName(e.target.value) }} />

@@ -29,7 +29,7 @@ const Navbar = () => {
     }, [isMenuOpen])
 
     return (
-        <nav className={`  ${hasScrolled ? "bg-primary/90 " : ""} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50 animate-fade-in-delay-7 `} >
+        <nav className={`  ${hasScrolled ? "bg-background/90 " : ""} fixed z-100 flex items-center justify-around w-full h-auto top-0 py-3 xl:gap-x-50 animate-fade-in-delay-7 `} >
             <Link className="cursor-default text-[1.3rem] md:text-2xl lg:text-[1.7rem] xl:text-[1.9rem] 2xl:text-3xl" to={"/"}>
                 <span className="text-text font-medium ">Balaj's</span>
                 <span className="font-[750] text-glow" style={{
@@ -38,7 +38,7 @@ const Navbar = () => {
                     backgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     color: "transparent"
-                }}>Portfolio<span className="text-2xl" style={{ color: "oklch(57.7% 0.245 27.325)" }}>.</span></span>
+                }}>Portfolio<span className="text-xl md:text-2xl text-accent" >.</span></span>
             </Link>
 
             {/* {Desktop Navbar} */}
@@ -51,7 +51,7 @@ const Navbar = () => {
                             href={item.path}
                             onClick={() => setActiveLink(item.id)} // use `id`, not `name`
                             className={`border-b-2   p-1 transition-all duration-300 ease-in-out hover:scale-110 focus:scale-150 
-      ${activeLink === item.id ? "border-b-accent " : "border-transparent gradient-text-grey "}`}
+      ${activeLink === item.id ? "border-b-secondary " : "border-transparent gradient-text-grey "}`}
                         >
                             {item.name}
                         </a>

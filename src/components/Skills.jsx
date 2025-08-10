@@ -25,7 +25,7 @@ const Skills = () => {
             <div className=' lg:p-3 p-2 my-3  md:mt-2 flex flex-center space-x-0 sm:space-x-4 md:space-x-2 lg:space-x-9 '>
                 {
                     allCategories.map((category, index) => {
-                        return <button className={`skill-category-buttons`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} ><span className={` ${currentCategory===category?"border-b-2 border-b-accent":""} pb-1 px-1 gradient-text-grey `}>{category}</span></button>
+                        return <button className={`skill-category-buttons`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} ><span className={` ${currentCategory===category?"border-b-2 border-b-secondary":""} pb-1 px-1 gradient-text-grey `}>{category}</span></button>
                     })
                 }
             </div>

@@ -24,7 +24,7 @@
     --accent-color: rgba(0, 150, 202, 1);
     --background-color: rgb(12, 12, 12);
     --text-color: rgb(246, 246, 246);
-    
+  
     --theme-icon-color: rgb(245, 197, 3);
     --meteor-color: linear-gradient(to bottom, transparent, white, white, white);
 
@@ -48,7 +48,7 @@
 
   body {
     text-align: center;
-    @apply bg-primary;
+    @apply bg-background;
     transition: all .5s ease-in-out;
 
   }
@@ -83,15 +83,16 @@
   --breakpoint-xl: 1400px;
   --breakpoint-2xl: 1800px;
 
+  --color-primary: var(--main-text-color);
+  --color-background: var(--background-color);
 
-  --color-primary: var(--background-color);
   --color-text: var(--text-color);
   --default-font-family: var(--font-family);
-  --color-border-color: var(--border-color);
   --color-icon: var(--theme-icon-color);
-  --color-main: var(--main-text-color);
+    --color-accent: oklch(57.7% 0.245 27.325);
+    --color-secondary: var(--accent-color);
   --color-underline: var(--underline-color);
-  --color-accent: var(--accent-color);
+
   --color-project: rgba(37, 99, 235, 0.1);
   --animate-star: pulse-star ease-in-out infinite;
   --animate-meteor: meteor-shower linear infinite;
@@ -258,7 +259,7 @@
 
 
   .form-input {
-    @apply text-sm py-2 md:text-[1rem] w-full p-1.5 pl-4 bg-primary rounded-sm focus:outline-none focus:ring-1 ring-main;
+    @apply text-sm py-2 md:text-[1rem] w-full p-1.5 pl-4 bg-background rounded-sm focus:outline-none focus:ring-1 ring-primary;
   }
 
   .skill-category-buttons {
@@ -267,7 +268,7 @@
   }
 
   .about-card {
-    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-main/50 rounded-sm hover:scale-[.9] active:scale-90 transition-all ease-linear duration-500 animate-card-bounce;
+    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-primary/80 rounded-sm hover:scale-[.9] active:scale-90 transition-all ease-linear duration-500 animate-card-bounce;
   }
 
   .cosmic-button-primary {
@@ -283,7 +284,7 @@
   }
 
   .cosmic-button-secondary {
-    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-primary flex flex-center border-main md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-accent/20 focus:bg-accent/20;
+    @apply px-3 py-2 md:py-2.5 text-[.8rem] rounded-4xl bg-background flex flex-center border-primary md:font-medium border-2 md:px-5 md:p-2 lg:py-3 hover:bg-secondary/20 focus:bg-secondary/20;
   }
 
   .star {
@@ -306,11 +307,11 @@
   }
 
   .social-icon-hover {
-    @apply size-6 lg:size-7 xl:size-8 hover:text-accent hover:scale-115 transition-all ease-in-out duration-100;
+    @apply size-6 lg:size-7 xl:size-8 hover:text-secondary font-sans font-bold hover:scale-115 transition-all ease-in-out duration-100;
   }
 
   .project-links {
-    @apply text-text/70 hover:text-accent hover:scale-115 transition-all ease-in duration-100
+    @apply text-text/70 hover:text-secondary hover:scale-115 transition-all ease-in duration-100
   }
 }
 

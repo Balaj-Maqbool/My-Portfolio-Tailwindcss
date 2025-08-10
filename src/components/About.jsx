@@ -29,7 +29,7 @@ const About = () => {
                     {
                         aboutCards.map((card, index) => {
                             return <div key={index} className="about-card">
-                                <div className="h-8 w-8 text-white outline-2 outline-main rounded-full bg-main/40 flex flex-center">
+                                <div className="h-8 w-8 text-white outline-2 outline-primary rounded-full bg-primary/40 flex flex-center">
                                     {card.icon}
                                 </div>
                                 <div className="flex flex-col flex-center  max-w-[80%]  md:max-w-[85%]">

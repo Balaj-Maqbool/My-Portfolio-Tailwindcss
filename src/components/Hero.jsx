@@ -28,7 +28,7 @@ const Hero = () => {
 
             <div className=' combo-animation  p-2 z-60  absolute  bottom-2.5  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
                 <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text '>scroll</p>
-                <ArrowDown size={25} color='oklch(57.7% 0.245 27.325)' />
+                <ArrowDown size={25} className='text-accent font-sans' />
             </div>
         </section>
     )

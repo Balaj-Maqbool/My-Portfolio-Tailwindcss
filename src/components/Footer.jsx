@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
             <h3 className=" mt-3  lg:mt-4 text-[.8rem] sm:text-sm md:text-[1rem] xl:text-xl text-text/60 ">
                 <p> &copy; 2025 Balaj Maqbool. All rights reserved.</p>
-                <p className="flex flex-center gap-x-1">Designed and built with <ImFire className=" text-red-500 z-50 text-[1rem] md:text-xl" />passion.</p>
+                <p className="flex flex-center gap-x-1">Designed and built with <ImFire className=" text-accent z-50 text-[1rem] md:text-xl" />passion.</p>
             </h3>
 
         </div>
