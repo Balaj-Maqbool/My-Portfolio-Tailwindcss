@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import SectionHeading from '../utils/SectionHeading'
-import { Mail, Phone, MapPin, TextIcon, Send } from "lucide-react"
+import { Mail, Phone, MapPin, TextIcon, Send, Indent } from "lucide-react"
 import useInView from '../hooks/IntersectionObserver.js'
 import { useToast } from "../hooks/use-toast.js"
+import ContactInfoCard from './ContactInfoCard.jsx'
 
 const contactInfo = [
     {
@@ -58,13 +59,14 @@ const Contact = () => {
         }, 1000);
 
     }
-    const { ref, isVisible } = useInView(null)
+    const { ref, isVisible } = useInView(.2)
+    const { ref:infoRef, isVisible:infoIsVisible } = useInView(.1)
 
     return (
-        <section ref={ref} id='contact' className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} scroll-mt-[280px] lg:scroll-mt-[200px] transition-all ease-in-out duration-1000 p-5 relative min-h-screen pt-20 z-50`} >
+        <section  id='contact' className={` p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"Get In"} p2={"Touch"} />
 
-            <div className='w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem] opacity-90 xl:text-[1rem] text-center gradient-text-grey'>
+            <div ref={ref} className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} transition-all ease-in-out duration-700 w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem]  xl:text-[1rem] text-center gradient-text-grey`}>
                 <div className='hidden md:flex flex-center '>
                     <p className='mr-1'>Looking for a <strong className='gradient-text-pink'>developer</strong> who blends creativity with <strong className='gradient-text-pink'>clean code</strong>? Let’s chat </p>
                     <span><TextIcon strokeWidth={2.5} className='text-accent' size={20} /></span>
@@ -88,22 +90,14 @@ const Contact = () => {
                         {
                             contactInfo.map((info) => {
                                 return (
-                                    <a key={info.id} href={info.link} target='blank' rel='noopener noreferrer' className=' z-50 flex justify-start sm:flex-col md:flex-row sm:h-full  w-[90%] space-x-3 sm:space-x-0  md:w-[90%] lg:w-[65%]  p-2'>
-                                        <div className=' h-6 w-6 sm:w-5 sm:h-5 md:w-auto md:h-auto flex mr-5 flex-center md:p-4  sm:mr-2 md:mr-5 text-primary hover:text-primary/70'>
-                                            {info.icon}
-                                        </div>
-                                        <div className='md:min-w-[70%] flex flex-col justify-center  items-start'>
-                                            <h3 className='sm:hidden text-[.9rem] md:inline-block'>{info.title}</h3>
-                                            <p className='font-normal text-[.73rem] md:text-sm text-text/60 hover:scale-[1.05] active:scale-105 hover:gradient-text-blue transition-all ease-in-out duration-200'>{info.value}</p>
-                                        </div>
-                                    </a>
+                                    <ContactInfoCard key={info.id} info={info}/>
                                 )
                             })
                         }
                     </div>
                 </div>
 
-                <div className='flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]  '>
+                <div ref={infoRef} className={`${infoIsVisible?"scale-100 opacity-100":"scale-0 opacity-0"} transition-all ease-in duration-700 flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]  `}>
                     <div className='flex flex-col items-center space-y-3  h-full w-full rounded-md py-5 lg:py-7 bg-project '>
                         <h3 className='text-text font-sans text-[1.15rem] md:text-[1.35rem]'>Send a Message</h3>
                         <form className='text-sm w-full h-full px-7 pt-3 flex flex-col space-y-6' onSubmit={handleSubmit}>

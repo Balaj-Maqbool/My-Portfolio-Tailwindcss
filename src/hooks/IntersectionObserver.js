@@ -22,7 +22,7 @@ const useInView = (threshold = 0.1) => {
                 //     intersectionRect: entry.intersectionRect
                 // });
             })
-        }, { threshold: threshold }
+        }, { threshold: threshold,rootMargin:"-150px 0px 0px -30px" }
         )
         if (ref.current instanceof Element) {
             observer.observe(ref.current)

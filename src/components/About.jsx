@@ -1,20 +1,18 @@
 
-import { aboutCards, paragraphs } from "../data/aboutCards";
+import { aboutCards, paragraphs } from "../data/about.jsx";
 import useInView from "../hooks/IntersectionObserver.js";
 import SectionHeading from "../utils/SectionHeading.jsx";
+import AboutCards from "./AboutCards.jsx";
 
 
 const About = () => {
-    const { ref, isVisible } = useInView()
-    // console.log(ref.current?.id, isVisible);
-
-
+    const { ref, isVisible } = useInView(.4)
     return (
-        <section ref={ref} id='about' className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} scroll-mt-[300px] lg:scroll-mt-[200px] transition-all ease-in-out duration-1000 p-5 relative min-h-screen pt-20 z-50`}>
+        <section id='about' className={`  p-5 relative min-h-screen pt-20 z-50`}>
             <SectionHeading p1={"About"} p2={"Me"} />
             <div className='grid grid-cols-1 lg:grid-cols-2 z-10  items-center justify-center gap-5 mt-7 md:px-20 py-5'>
 
-                <div className='flex flex-col flex-center space-y-4 text-text  md:px-10 '>
+                <div ref={ref}  className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} transition-all ease-in-out duration-1000 flex flex-col flex-center space-y-4 text-text  md:px-10 `}>
                     <h1 className=' hidden lg:inline-block md:text-xl  gradient-text-teal'>MERN Stack Developer</h1>
                     {
                         paragraphs.map((para, index) => <p key={index} className='text-sm md:text-[.95rem] font-sans opacity-[.85]'>{para}</p>)
@@ -28,15 +26,7 @@ const About = () => {
                 <div className="flex flex-col flex-center space-y-3.5">
                     {
                         aboutCards.map((card, index) => {
-                            return <div key={index} className="about-card">
-                                <div className="h-8 w-8 text-white outline-2 outline-primary rounded-full bg-primary/40 flex flex-center">
-                                    {card.icon}
-                                </div>
-                                <div className="flex flex-col flex-center  max-w-[80%]  md:max-w-[85%]">
-                                    <h3 className="pointer-events-none  font-normal">{card.title}</h3>
-                                    <p className="text-[0.66rem] sm:text-[.7rem] md:text-[.8rem] lg:text-sm pointer-events-none gradient-text-grey opacity-[0.8] font-sans">{card.content}</p>
-                                </div>
-                            </div>
+                            return <AboutCards key={index} card={card} />
                         })
                     }
                 </div>

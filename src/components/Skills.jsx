@@ -19,7 +19,7 @@ const Skills = () => {
 
 
     return (
-        <section  id='skills' className={` p-5 relative min-h-screen pt-20 z-50`} >
+        <section  id='skills' className={` scroll-my-5 p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"My"} p2={"Skills"} />
 
             <div className=' lg:p-3 p-2 my-3  md:mt-2 flex flex-center space-x-0 sm:space-x-4 md:space-x-2 lg:space-x-9 '>

@@ -101,11 +101,11 @@
   --animate-fade-in-delay-1: fade-in step-end 1.30s;
   --animate-fade-in-delay-2: fade-in step-end 1.50s;
   --animate-fade-in-delay-3: fade-in step-end 2.00s;
-  --animate-fade-in-delay-4: fade-in ease-in-out 3.00s;
-  --animate-fade-in-delay-5: fade-in ease-in-out 3.50s;
-  --animate-fade-in-delay-6: fade-in ease-in-out 4.00s;
-  --animate-fade-in-button: fade-in-btn ease-in-out 5.00s;
-  --animate-fade-in-delay-7: fade-in ease-in-out 5.50s;
+  --animate-fade-in-delay-4: fade-in ease-in-out 2.50s;
+  --animate-fade-in-delay-5: fade-in ease-in-out 3.00s;
+  --animate-fade-in-delay-6: fade-in ease-in-out 3.50s;
+  --animate-fade-in-button: fade-in-btn ease-in-out 4.00s;
+  --animate-fade-in-delay-7: fade-in ease-in-out 4.50s;
   --animate-fade-in-image: fade-in-img ease-in-out 5.50s;
 
   --animate-card-bounce: bounce ease-in-out 5s infinite;
@@ -268,7 +268,7 @@
   }
 
   .about-card {
-    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-primary/80 rounded-sm hover:scale-[.9] active:scale-90 transition-all ease-linear duration-500 animate-card-bounce;
+    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-primary/80 rounded-sm hover:scale-[.9] animate-card-bounce;
   }
 
   .cosmic-button-primary {
