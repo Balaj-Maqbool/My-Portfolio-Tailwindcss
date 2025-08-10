@@ -3,7 +3,7 @@ export const projects = [
         title: "BNN's E-Commerce Store",
         description: "A clean, responsive e-commerce app featuring product listings, a shopping cart, and checkout functionality built with React and Tailwind CSS",
         tags: ["React.js", "Vite", "Tailwind CSS",],
-        imageAddress: "assets/e-commerce-1.png", // Replace with actual image path
+        imageAddress: "assets/e-commerce-2.png", // Replace with actual image path
         liveURL: "https://my-e-commerce-store-phi.vercel.app/",
         githubURL: "https://github.com/Balaj-Maqbool/Appverse-Assignments/tree/main/simple-e-commerce-project"
     },

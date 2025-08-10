@@ -12,11 +12,11 @@ const Projects = () => {
         <section id='projects' className={`min-h-screen  p-5 relative  pt-20 z-50`}>
             <SectionHeading p1={"Featured"} p2={"Projects"} />
 
-            <div className='w-full text-[0.82rem] md:text-[.9rem] my-5 space-y-1 opacity-90 xl:text-[1rem] text-center gradient-text-grey'>
+            <div className='w-full text-[0.82rem] md:text-[.9rem] my-5 space-y-1 opacity-90  xl:text-[1rem] text-center gradient-text-grey'>
                 <p className='hidden sm:block'>Here are some of the <strong className='gradient-text-pink' >real-world projects</strong> I've built, where ideas meet <strong className='gradient-text-pink'>clean code</strong>, and functionality blends with <strong className='gradient-text-pink'>great design</strong>.</p>
                 <p className='hidden sm:block'>Each project reflects my <strong className='gradient-text-pink'>journey</strong>, <strong className='gradient-text-pink'>skills</strong>, and <strong className='gradient-text-pink'>passion</strong> for <strong className='gradient-text-pink'>web development</strong>.</p>
 
-                <p className='sm:hidden'>A glimpse of <strong className='gradient-text-pink' >real-world projects</strong> where ideas meet <strong className='gradient-text-pink'>clean code</strong> and <strong className='gradient-text-pink'>great design</strong>. <span className=''>Built with <strong className='gradient-text-pink'>precision</strong>, <strong className='gradient-text-pink'>passion</strong>, and <strong className='gradient-text-pink'>purpose</strong>.</span></p>
+                <p className='sm:hidden'>A glimpse of <strong className='gradient-text-pink font-normal' >real-world projects</strong> where ideas meet <strong className='gradient-text-pink font-normal'>clean code</strong> and <strong className='gradient-text-pink font-normal'>great design</strong>. <span className=''>Built with <strong className='gradient-text-pink font-normal'>precision</strong>, <strong className='gradient-text-pink font-normal'>passion</strong>, and <strong className='gradient-text-pink font-normal'>purpose</strong>.</span></p>
                 
 
             </div>
