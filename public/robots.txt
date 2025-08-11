@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /private/
+Disallow: /drafts/
+Allow: /
+
+Sitemap: https://balaj-maqbool-portfolio.vercel.app/sitemap.xml

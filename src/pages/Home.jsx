@@ -26,6 +26,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
+        
         <title>Balaj Maqbool | Web Developer Portfolio</title>
         <meta name="description" content="Welcome to Balaj Maqbool's portfolio. Showcasing real-world projects, skills in React.js, Node.js, MongoDB, Express.js, and Tailwind CSS." />
         <meta name="keywords" content="Balaj Maqbool, portfolio, React developer, web developer, full-stack, Tailwind CSS, Node.js, MongoDB" />
