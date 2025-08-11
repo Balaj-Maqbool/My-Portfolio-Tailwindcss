@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import LoadingScreen from './LoadingScreen.jsx';
 
-import StarBackground from "../components/BackGround.jsx"
-import Navbar from '../components/Navbar.jsx';
-import Hero from '../components/Hero.jsx';
+import StarBackground from "../components/BackGround/BackGround.jsx"
+import Navbar from '../components/Navbar/Navbar.jsx';
+import Hero from '../components/Hero/Hero.jsx';
 import About from '../components/About/About.jsx';
 import Skills from '../components/Skills/Skills.jsx';
 import Projects from '../components/Projects/Projects.jsx';
 import Contact from '../components/Contact/Contact.jsx';
-import Footer from '../components/Footer.jsx';
+import Footer from '../components/Footer/Footer.jsx';
 import BackToTop from '../components/BackToTop.jsx';
 import { Helmet } from 'react-helmet';
 

@@ -14,7 +14,7 @@ const SkillCards = ({ skill }) => {
       className={`${
         // Apply skill-specific animation if visible, otherwise fade-in default
         isVisible ? skill.animation : "animate-fade-in"
-      } rounded-xs z-50 bg-project ring-1 ring-primary/80 p-3 px- lg:p-3.5 sm:p-2.5 w-full hover:scale-110`}
+      } transition-all ease-in-out duration-500 rounded-xs z-50 bg-project ring-1 ring-primary/80 p-3 px- lg:p-3.5 sm:p-2.5 w-full hover:scale-110`}
     >
       {/* Skill name */}
       <h3 className="text-start text-[.75rem] sm:text-[.67rem] md:pb-2 md:text-sm">
