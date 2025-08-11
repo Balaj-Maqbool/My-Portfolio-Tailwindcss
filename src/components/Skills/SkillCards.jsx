@@ -2,7 +2,7 @@ import React from 'react'
 import useInView from "../../hooks/IntersectionObserver.js";
 
 const SkillCards = ({ skill }) => {
-    const { ref, isVisible } = useInView({ threshold: .4, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
+    const { ref, isVisible } = useInView({ threshold: .1, rootMargin: "-50px 0px 0px -50px", triggerOnce: true })
     return (
         <div ref={ref} className={` ${isVisible && skill.animation} rounded-xs z-50  bg-project ring-1 ring-primary/80   p-3 px- lg:p-3.5 sm:p-2.5  w-full  hover:scale-110 `}>
             <h3 className="text-start text-[.75rem]  sm:text-[.67rem] md:pb-2 md:text-sm ">{skill.name}</h3>
