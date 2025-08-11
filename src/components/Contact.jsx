@@ -128,8 +128,6 @@ const Contact = () => {
 
 
             <div className='grid grid-cols-1 md:grid-cols-2  lg:p-5 lg:px-10  '>
-
-
                 <div className=' flex flex-col flex-center space-y-3  py-5'>
                     <h3 className='text-text font-normal text-[1.1rem] md:text-xl'>Contact Information</h3>
                     <div className='flex flex-col sm:flex-row md:flex-col sm:justify-around  items-center md:space-y-3 min-w-full md:min-w-[90%] lg:ml-0  md:min-h-[90%]'>

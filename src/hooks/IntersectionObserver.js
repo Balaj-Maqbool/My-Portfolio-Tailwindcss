@@ -12,15 +12,7 @@ const useInView = (threshold = 0.1) => {
 
             entries.forEach((entry) => {
                 setIsVisible(entry.isIntersecting)
-                // console.log({
-                //     isIntersecting: entry.isIntersecting,
-                //     ratio: entry.intersectionRatio,
-                //     target: entry.target,
-                //     time: entry.time,
-                //     rootBounds: entry.rootBounds,
-                //     boundingClientRect: entry.boundingClientRect,
-                //     intersectionRect: entry.intersectionRect
-                // });
+                
             })
         }, { threshold: threshold,rootMargin:"-150px 0px 0px -30px" }
         )

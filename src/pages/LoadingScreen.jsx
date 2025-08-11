@@ -88,26 +88,33 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
       "rgba(236, 72, 153, 0.4)",
       "rgba(6, 182, 212, 0.4)",
       "rgba(34, 197, 94, 0.4)",
-      "rgba(251, 191, 36, 0.4)",
-    ];
+      "rgba(251, 191, 36, 0.4)",  // light creamy yellow
+    ]
+      ;
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
   if (!showLoading) return null;
-
+  const colorPhases = [
+    "gradient-text-pink",
+    "gradient-text-purple",
+    "gradient-text-blue",
+    "gradient-text-blue",
+  ]
   const CurrentIcon = loadingPhases[currentPhase]?.icon || Terminal;
+  const CurrentTitleColor = colorPhases[currentPhase] || "gradient-text-blue";
 
   return (
-    <div className="fixed inset-0 z-50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-gradient-to-br from-black to-black flex flex-col items-center justify-center overflow-hidden">
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-20">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
-          `,
+            linear-gradient(rgba(69, 100, 226, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 276, 0.1) 1px,  transparent 1px)
+`,
             backgroundSize: "50px 50px",
             animation: "grid-move 20s linear infinite",
           }}
@@ -134,20 +141,20 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         <div className="relative mb-8">
           <div className="relative w-24 h-24 mb-6">
             {/* Outer rotating ring */}
-            <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-blue-500 border-r-purple-500 animate-spin" />
-            <div className="absolute inset-2 rounded-full border-4 border-transparent border-b-cyan-500 border-l-pink-500 animate-spin-reverse" />
-            <div className="absolute inset-4 rounded-full border-2 border-transparent border-t-emerald-500 animate-spin-slow" />
+            <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-pink-500 border-r-primary animate-spin" />
+            <div className="absolute inset-2 rounded-full border-4 border-transparent border-b-secondary border-l-primary animate-spin-reverse" />
+            <div className="absolute inset-4 rounded-full border-2 border-transparent border-t-accent animate-spin-slow" />
 
             {/* Center icon */}
             <div className="absolute inset-6 rounded-full bg-slate-900/80 backdrop-blur-sm flex items-center justify-center border border-slate-700">
-              <CurrentIcon className="w-6 h-6 text-blue-400 animate-pulse" />
+              <CurrentIcon className="w-6 h-6 text-blue-500 animate-pulse" />
             </div>
           </div>
         </div>
 
         {/* Brand name */}
         <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+          <h1 className={`${CurrentTitleColor} text-3xl md:text-4xl font-bold text-transparent mb-2`}>
             Portfolio
           </h1>
           <p className="text-slate-400 text-sm tracking-wide">
@@ -166,7 +173,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         <div className="w-80 max-w-sm mb-4">
           <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-600">
             <div
-              className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-300 ease-out relative"
+              className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 ease-out relative"
               style={{ width: `${progress}%` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
@@ -183,10 +190,11 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"
+              className={` h-2 w-2  md:w-2.5 md:h-2.5 rounded-full animate-pulse`}
               style={{
                 animationDelay: `${i * 0.3}s`,
                 animationDuration: "1.5s",
+                background: "linear-gradient(150deg, rgb(25, 81, 81), rgb(49, 189, 170), rgb(6, 134, 143), rgb(23, 101, 101))",
               }}
             />
           ))}
