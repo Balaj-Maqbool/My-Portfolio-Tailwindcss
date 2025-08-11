@@ -98,21 +98,20 @@ const Contact = () => {
                     ),
                     className: "text-text border-2 border-accent bg-background",
                 });
-            })
-            .finally(() => {
+            }).finally(() => {
                 setSendingMessage(false);
             });
     };
 
 
-    const { ref, isVisible } = useInView(.2)
+    const { ref, isVisible } = useInView({ threshold: .5, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
     const { ref: infoRef, isVisible: infoIsVisible } = useInView(.1)
 
     return (
         <section id='contact' className={` p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"Get In"} p2={"Touch"} />
 
-            <div ref={ref} className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} transition-all ease-in-out duration-700 w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem]  xl:text-[1rem] text-center gradient-text-grey`}>
+            <div ref={ref} className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-0"} transition-all ease-in-out duration-700 w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem]  xl:text-[1rem] text-center gradient-text-grey`}>
                 <div className='hidden md:flex flex-center '>
                     <p className='mr-1'>Looking for a <strong className='gradient-text-pink'>developer</strong> who blends creativity with <strong className='gradient-text-pink'>clean code</strong>? Let’s chat </p>
                     <span><TextIcon strokeWidth={2.5} className='text-accent' size={20} /></span>

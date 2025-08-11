@@ -6,7 +6,8 @@ import AboutCards from "./AboutCards.jsx";
 
 
 const About = () => {
-    const { ref, isVisible } = useInView(.4)
+     const { ref, isVisible } = useInView({ threshold: .3, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
+     const { ref:cardContaineRef, isVisible:isCardContainerVisible } = useInView({ threshold: .4, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
     return (
         <section id='about' className={`  p-5 relative min-h-screen pt-20 z-50`}>
             <SectionHeading p1={"About"} p2={"Me"} />
@@ -23,10 +24,10 @@ const About = () => {
                     </div>
                 </div>
                 {/* cards */}
-                <div className="flex flex-col flex-center space-y-3.5">
+                <div ref={cardContaineRef} className={` ${isCardContainerVisible?"scale-100 opacity-100":"scale-0 opacity-0"} transition-all ease-linear duration-700 flex flex-col flex-center space-y-3.5`}>
                     {
                         aboutCards.map((card, index) => {
-                            return <AboutCards key={index} card={card} />
+                            return <AboutCards key={index} card={card} index={index} />
                         })
                     }
                 </div>

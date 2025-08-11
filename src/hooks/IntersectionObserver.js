@@ -1,11 +1,11 @@
 
 import { useState, useEffect, useRef } from "react"
 
-const useInView = (threshold = 0.1) => {
+const useInView = ({threshold,rootMargin,triggerOnce}) => {
     const [isVisible, setIsVisible] = useState(false)
 
 
-    const ref = useRef()
+    const ref = useRef(null)
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -14,13 +14,17 @@ const useInView = (threshold = 0.1) => {
                 setIsVisible(entry.isIntersecting)
                 
             })
-        }, { threshold: threshold,rootMargin:"-150px 0px 0px -30px" }
+        }, { 
+            threshold: threshold,
+            rootMargin:rootMargin,
+            triggerOnce:triggerOnce
+         }
         )
         if (ref.current instanceof Element) {
             observer.observe(ref.current)
         }
-        // console.log(observer);
 
+// console.log(observer);
 
 
         return (() => {

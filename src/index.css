@@ -15,7 +15,7 @@
     --accent-color: rgba(254, 17, 17, 0.97);
   }
 
-  .no-scroll{
+  .no-scroll {
     overflow: hidden;
   }
 
@@ -24,7 +24,7 @@
     --accent-color: rgba(0, 150, 202, 1);
     --background-color: rgb(0, 0, 0);
     --text-color: rgb(246, 246, 246);
-  
+
     --theme-icon-color: rgb(245, 197, 3);
     --meteor-color: linear-gradient(to bottom, transparent, white, white, white);
 
@@ -89,8 +89,8 @@
   --color-text: var(--text-color);
   --default-font-family: var(--font-family);
   --color-icon: var(--theme-icon-color);
-    --color-accent: oklch(57.7% 0.245 27.325);
-    --color-secondary: var(--accent-color);
+  --color-accent: oklch(57.7% 0.245 27.325);
+  --color-secondary: var(--accent-color);
   --color-underline: var(--underline-color);
 
   --color-project: rgba(37, 99, 235, 0.1);
@@ -109,7 +109,6 @@
   --animate-fade-in-image: fade-in-img ease-in-out 5.50s;
 
   --animate-card-bounce: bounce ease-in-out 5s infinite;
-
   --animate-grow-bar: grow 2s ease-in-out;
   --animate-scale-out: scale 1s linear;
 
@@ -249,9 +248,33 @@
     }
   }
 
+  --animate-slide-in-right:slideInRight forwards 1s;
+  --animate-slide-in-left:slideOutLeft forwards 1s;
 
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
 
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
+  /* 2b. Reverse: slide out to left */
+  @keyframes slideOutLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
 
 
@@ -263,7 +286,7 @@
   }
 
   .skill-category-buttons {
-    @apply h-auto w-auto p-1 px-2.5 lg:p-1.5 lg:px-3 xl:px-3.5 xl:p-2 mr-1 text-[.75rem] sm:text-[.8rem] hover:scale-[1.15] md:text-sm capitalize  font-semibold  transition-all ease-in-out duration-500;
+    @apply h-auto w-auto p-1 px-2.5 lg:p-1.5 lg:px-3 xl:px-3.5 xl:p-2 mr-1 text-[.75rem] sm:text-[.8rem] hover:scale-[1.15] md:text-sm capitalize font-semibold transition-all ease-in-out duration-500;
 
   }
 
@@ -298,7 +321,7 @@
   }
 
   .mobile-menu {
-    @apply  text-sm sm:text-[1rem] md:hidden flex flex-col h-screen w-screen justify-baseline items-center space-y-7 absolute top-0 px-0 py-16  transition-all ease-in-out duration-[1s];
+    @apply text-sm sm:text-[1rem] md:hidden flex flex-col h-screen w-screen justify-baseline items-center space-y-7 absolute top-0 px-0 py-16 transition-all ease-in-out duration-[1s];
   }
 
   .profile-image {

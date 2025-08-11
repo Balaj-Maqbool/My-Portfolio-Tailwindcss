@@ -1,9 +1,11 @@
+import useInView from "../hooks/IntersectionObserver"
+
 
 
 const SectionHeading = ({ p1, p2 }) => {
-    
+    const { ref, isVisible } = useInView({ threshold: .9, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
     return (
-        <h2 className='text-center text-[1.35rem] sm:text-2xl md:text-3xl lg:text-4xl  tracking-wide'>
+        <h2 ref={ref} className={`${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"} transition-all duration-1000 ease-in-out text-center text-[1.4rem] sm:text-2xl md:text-3xl lg:text-4xl  tracking-wide`}>
             <span className=''>{p1} </span>
             <span className='text-main font-semibold gradient-text-blue' >{p2}</span>
         </h2>

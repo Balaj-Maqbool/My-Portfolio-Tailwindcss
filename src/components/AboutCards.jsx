@@ -1,10 +1,15 @@
 import React from 'react'
 import useInView from '../hooks/IntersectionObserver'
 
-const AboutCards = ({ card }) => {
-    const { ref, isVisible } = useInView(.3)
+const AboutCards = ({ card, index }) => {
+
     return (
-        <div ref={ref} className={` ${isVisible ? "scale-100 about-card hover:scale-90 opacity-100 " : "opacity-0 scale-0"} transition-all ease-in-out duration-1000`}>
+        <div className={` about-card`}
+            style={
+                {
+                    animationDelay: index + "s",
+                }
+            }>
             <div className="h-8 w-8 text-white outline-2 outline-primary rounded-full bg-primary/40 flex flex-center">
                 {card.icon}
             </div>
