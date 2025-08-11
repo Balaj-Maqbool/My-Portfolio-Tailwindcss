@@ -1,14 +1,7 @@
 
-
 const AboutCards = ({ card, index }) => {
-
     return (
-        <div className={` about-card`}
-            style={
-                {
-                    animationDelay: index + "s",
-                }
-            }>
+        <div className={`about-card`} style={{ animationDelay: ++index + "s" }}>
             <div className="h-8 w-8 text-white outline-2 outline-primary rounded-full bg-primary/40 flex flex-center">
                 {card.icon}
             </div>
