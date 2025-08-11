@@ -291,7 +291,7 @@
   }
 
   .about-card {
-    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-primary/80 rounded-sm hover:scale-[.9] animate-card-bounce;
+    @apply flex items-center space-x-3 w-full h-auto p-2 md:p-3 bg-project border-2 border-primary/80 rounded-sm hover:scale-90 transition-all duration-500 ease-in animate-card-bounce;
   }
 
   .cosmic-button-primary {
