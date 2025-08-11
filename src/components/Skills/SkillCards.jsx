@@ -2,7 +2,7 @@ import React from 'react'
 import useInView from "../../hooks/IntersectionObserver.js";
 
 const SkillCards = ({ skill }) => {
-    const { ref, isVisible } = useInView({ threshold: .1, rootMargin: "0px 0px 0px 0px", triggerOnce: true });
+    const { ref, isVisible } = useInView({ threshold: .1, rootMargin: "-70px 0px 0px 30px", triggerOnce: true });
     // console.log(ref,isVisible);
     
     return (
