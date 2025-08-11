@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import SectionHeading from '../utils/SectionHeading'
 import { Mail, Phone, MapPin, TextIcon, Send, Indent } from "lucide-react"
 import useInView from '../hooks/IntersectionObserver.js'
 import { useToast } from "../hooks/use-toast.js"
 import ContactInfoCard from './ContactInfoCard.jsx'
+import emailjs from "emailjs-com"
 
 const contactInfo = [
     {
@@ -39,31 +40,76 @@ const Contact = () => {
 
     const [sendingMessage, setSendingMessage] = useState(false)
     const { toast } = useToast("")
+    const form = useRef(null)
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setSendingMessage(true)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setSendingMessage(true);
 
-        setTimeout(() => {
-            toast({
-                title: <span className='font-sans font-semibold gradient-text-pink'>Message Sent !</span>,
-                description: <div className=''>Hi <span className='capitalize font-semibold font-sans  gradient-text-blue'>{name}</span>, <span className='hidden md:inline'>I have received Your Message,</span> I'll get back to you Soon</div>,
-                className: "text-text border-2 border-primary bg-background"
+        emailjs
+            .sendForm(
+                "service_28kqrgb",
+                "template_m58uywc",
+                form.current,
+                "ssjfoFUOO32br1QPz"
+            )
+            .then(() => {
+                toast({
+                    title: (
+                        <span className="font-sans font-semibold gradient-text-pink">
+                            Message Sent!
+                        </span>
+                    ),
+                    description: (
+                        <>
+                            <div>
+                                Hi{" "}
+                                <span className="capitalize font-semibold font-sans gradient-text-blue">
+                                    {name}
+                                </span>
+                                , I have received your message. I'll get back to you soon.
+                            </div>
+                        </>
+                    ),
+                    className: "text-text border-2 border-primary bg-background",
+                });
+
+                SetName("");
+                SetEmail("");
+                SetMessage("");
+            })
+            .catch(() => {
+                toast({
+                    title: (
+                        <span className="font-sans font-semibold gradient-text-red">
+                            Failed to Send
+                        </span>
+                    ),
+                    description: (
+                        <>
+                            <div>
+                                Sorry{" "}
+                                <span className="capitalize font-semibold font-sans gradient-text-blue">
+                                    {name}
+                                </span>
+                                , something went wrong. Please try again later.
+                            </div>
+                        </>
+                    ),
+                    className: "text-text border-2 border-accent bg-background",
+                });
+            })
+            .finally(() => {
+                setSendingMessage(false);
             });
+    };
 
 
-            setSendingMessage(false)
-            // SetName("")
-            // SetEmail("")
-            // SetMessage("")
-        }, 1000);
-
-    }
     const { ref, isVisible } = useInView(.2)
-    const { ref:infoRef, isVisible:infoIsVisible } = useInView(.1)
+    const { ref: infoRef, isVisible: infoIsVisible } = useInView(.1)
 
     return (
-        <section  id='contact' className={` p-5 relative min-h-screen pt-20 z-50`} >
+        <section id='contact' className={` p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"Get In"} p2={"Touch"} />
 
             <div ref={ref} className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} transition-all ease-in-out duration-700 w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem]  xl:text-[1rem] text-center gradient-text-grey`}>
@@ -90,20 +136,20 @@ const Contact = () => {
                         {
                             contactInfo.map((info) => {
                                 return (
-                                    <ContactInfoCard key={info.id} info={info}/>
+                                    <ContactInfoCard key={info.id} info={info} />
                                 )
                             })
                         }
                     </div>
                 </div>
 
-                <div ref={infoRef} className={`${infoIsVisible?"scale-100 opacity-100":"scale-0 opacity-0"} transition-all ease-in duration-700 flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]  `}>
+                <div ref={infoRef} className={`${infoIsVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"} transition-all ease-in duration-700 flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]  `}>
                     <div className='flex flex-col items-center space-y-3  h-full w-full rounded-md py-5 lg:py-7 bg-project '>
                         <h3 className='text-text font-sans text-[1.15rem] md:text-[1.35rem]'>Send a Message</h3>
-                        <form className='text-sm w-full h-full px-7 pt-3 flex flex-col space-y-6' onSubmit={handleSubmit}>
-                            <input className='form-input' type="text" required placeholder='Your Name' value={name} onChange={(e) => { SetName(e.target.value) }} />
-                            <input className='form-input' type="email" required placeholder='Email' value={email} onChange={(e) => { SetEmail(e.target.value) }} />
-                            <textarea className='form-input py-5 md:py-6' placeholder='Your Message' required value={message} onChange={(e) => { SetMessage(e.target.value) }} ></textarea>
+                        <form className='text-sm w-full h-full px-7 pt-3 flex flex-col space-y-6' ref={form} onSubmit={handleSubmit}>
+                            <input className='form-input' type="text" required placeholder='Your Name' name='user_name' value={name} onChange={(e) => { SetName(e.target.value) }} />
+                            <input className='form-input' type="email" required placeholder='Email' name='user_email' value={email} onChange={(e) => { SetEmail(e.target.value) }} />
+                            <textarea className='form-input py-5 md:py-6' placeholder='Your Message' required name='message' value={message} onChange={(e) => { SetMessage(e.target.value) }} ></textarea>
                             <button className={` ${sendingMessage ? "cosmic-button-secondary" : "cosmic-button-primary  gap-x-1"} `} type='submit' disabled={sendingMessage}> {sendingMessage ? "Sending Message ... " : <>Send Message<Send size={20} /></>}</button>
                         </form>
                     </div>
