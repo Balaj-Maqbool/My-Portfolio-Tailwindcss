@@ -32,7 +32,7 @@ const Skills = () => {
             <div className=" grid grid-cols-1 sm:grid-cols-2 sm2:grid-cols-3  md2:grid-cols-3 lg:grid-cols-4  px-8 sm:px-5  sm2:px-10   xl:grid-cols-5  lg:px-24  md:py-5 lg:py-10 max-sm:gap-y-5  gap-2 sm:gap-5 md:gap-7 lg:gap-10">
                 {
                     selectedSkills.map((skill, index) => (
-                        <SkillCards key={`${index}-${currentCategory}`} skill={skill} />
+                        <SkillCards key={index} skill={skill} />
                     ))
                 }
             </div>
