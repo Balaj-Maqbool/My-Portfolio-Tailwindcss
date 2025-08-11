@@ -8,9 +8,9 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
   const [particleStyles, setParticleStyles] = useState([]);
 
   const loadingPhases = [
-    { text: "Initializing...", icon: Zap, duration: 800 },
-    { text: "Loading Components...", icon: Layers, duration: 1200 },
-    { text: "Compiling Assets...", icon: Code, duration: 1500 },
+    { text: "Initializing...", icon: Zap, duration: 600 },
+    { text: "Loading Components...", icon: Layers, duration: 1000 },
+    { text: "Compiling Assets...", icon: Code, duration: 600 },
     { text: "Optimizing Performance...", icon: Terminal, duration: 1000 },
     { text: "Finalizing...", icon: Zap, duration: 500 },
   ];
@@ -112,9 +112,8 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-            linear-gradient(rgba(69, 100, 226, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 276, 0.1) 1px,  transparent 1px)
-`,
+            linear-gradient(rgba(200, 220, 255, 0.08) 1px, transparent 1px)
+            linear-gradient(90deg, rgba(200, 220, 255, 0.08) 1px, transparent 1px)`,
             backgroundSize: "50px 50px",
             animation: "grid-move 20s linear infinite",
           }}
@@ -170,8 +169,8 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         </div>
 
         {/* Progress bar */}
-        <div className="w-80 max-w-sm mb-4">
-          <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-600">
+        <div className="w-80 px-14 sm:px-5 md:px-1 max-w-sm mb-4">
+          <div className="  h-2 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-600">
             <div
               className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 ease-out relative"
               style={{ width: `${progress}%` }}
