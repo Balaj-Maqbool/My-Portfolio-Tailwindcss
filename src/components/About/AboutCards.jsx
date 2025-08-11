@@ -1,5 +1,4 @@
-import React from 'react'
-import useInView from '../hooks/IntersectionObserver'
+
 
 const AboutCards = ({ card, index }) => {
 

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { skills } from "../data/skills.js";
-import SectionHeading from "../utils/SectionHeading.jsx";
-import useInView from "../hooks/IntersectionObserver.js";
+import { skills } from "../../data/skills.js";
+import SectionHeading from "../SectionHeading.jsx";
 import SkillCards from "./SkillCards.jsx";
 
 
@@ -19,13 +18,13 @@ const Skills = () => {
 
 
     return (
-        <section  id='skills' className={` scroll-my-5 p-5 relative min-h-screen pt-20 z-50`} >
+        <section id='skills' className={` scroll-my-5 p-5 relative min-h-screen pt-20 z-50`} >
             <SectionHeading p1={"My"} p2={"Skills"} />
 
             <div className=' lg:p-3 p-2 my-3  md:mt-2 flex flex-center space-x-0 sm:space-x-4 md:space-x-2 lg:space-x-9 '>
                 {
                     allCategories.map((category, index) => {
-                        return <button className={`skill-category-buttons`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} ><span className={` ${currentCategory===category?"border-b-2 border-b-secondary":""} pb-1 px-1 gradient-text-grey `}>{category}</span></button>
+                        return <button className={`skill-category-buttons`} onClick={() => (currentCategory !== category && setCurrentCategory(category))} key={index} ><span className={` ${currentCategory === category ? "border-b-2 border-b-secondary" : ""} pb-1 px-1 gradient-text-grey `}>{category}</span></button>
                     })
                 }
             </div>

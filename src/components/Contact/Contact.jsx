@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
-import SectionHeading from '../utils/SectionHeading'
-import { Mail, Phone, MapPin, TextIcon, Send, Indent } from "lucide-react"
-import useInView from '../hooks/IntersectionObserver.js'
-import { useToast } from "../hooks/use-toast.js"
+import SectionHeading from '../SectionHeading.jsx'
+import { Mail, Phone, MapPin, TextIcon, Send } from "lucide-react"
+import useInView from '../../hooks/IntersectionObserver.js'
+import { useToast } from "../../hooks/use-toast.js"
 import ContactInfoCard from './ContactInfoCard.jsx'
 import emailjs from "emailjs-com"
 

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Github, ExternalLink, User } from "lucide-react"
-import useInView from '../hooks/IntersectionObserver'
+
+import { Github, ExternalLink } from "lucide-react"
+import useInView from '../../hooks/IntersectionObserver'
 
 
 const ProjectCard = ({ project }) => {

@@ -5,10 +5,10 @@ import LoadingScreen from './LoadingScreen.jsx';  // adjust path if needed
 import StarBackground from "../components/BackGround.jsx"
 import Navbar from '../components/Navbar.jsx';
 import Hero from '../components/Hero.jsx';
-import About from '../components/About.jsx';
-import Skills from '../components/Skills.jsx';
-import Projects from '../components/Projects.jsx';
-import Contact from '../components/Contact.jsx'
+import About from '../components/About/About.jsx';
+import Skills from '../components/Skills/Skills.jsx';
+import Projects from '../components/Projects/Projects.jsx';
+import Contact from '../components/Contact/Contact.jsx'
 import Footer from '../components/Footer.jsx';
 import BackToTop from '../components/BackToTop.jsx';
 import { Helmet } from 'react-helmet';

@@ -1,14 +1,14 @@
 import React from 'react'
-import { projects } from "../data/projects.js"
-import SectionHeading from '../utils/SectionHeading.jsx'
+import { projects } from "../../data/projects.js"
+import SectionHeading from '../SectionHeading.jsx'
 import { ArrowRight } from "lucide-react"
 import ProjectCard from './ProjectCard.jsx'
-import useInView from '../hooks/IntersectionObserver.js'
+import useInView from '../../hooks/IntersectionObserver.js'
 
 
 
 const Projects = () => {
-    const { ref,isVisible } = useInView(.2)
+    const { ref, isVisible } = useInView(.2)
     return (
         <section id='projects' className={`min-h-screen  p-5 relative  pt-20 z-50`}>
             <SectionHeading p1={"Featured"} p2={"Projects"} />

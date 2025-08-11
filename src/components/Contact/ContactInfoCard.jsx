@@ -1,11 +1,11 @@
 import React from 'react'
-import useInView from '../hooks/IntersectionObserver'
+import useInView from '../../hooks/IntersectionObserver'
 
-const ContactInfoCard = ({info}) => {
- const{ref,isVisible}= useInView(.1)
+const ContactInfoCard = ({ info }) => {
+    const { ref, isVisible } = useInView(.1)
 
     return (
-        <a  ref={ref} key={info.id} href={info.link} target='blank' rel='noopener noreferrer' className={`${isVisible?"opacity-100 scale-100":"opacity-0 scale-0"} transition-all ease-linear duration-1000 z-50 flex justify-start sm:flex-col md:flex-row sm:h-full  w-[90%] space-x-3 sm:space-x-0  md:w-[90%] lg:w-[65%]  p-2`}>
+        <a ref={ref} key={info.id} href={info.link} target='blank' rel='noopener noreferrer' className={`${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"} transition-all ease-linear duration-1000 z-50 flex justify-start sm:flex-col md:flex-row sm:h-full  w-[90%] space-x-3 sm:space-x-0  md:w-[90%] lg:w-[65%]  p-2`}>
             <div className=' h-6 w-6 sm:w-5 sm:h-5 md:w-auto md:h-auto flex mr-5 flex-center md:p-4  sm:mr-2 md:mr-5 text-primary hover:text-primary/70'>
                 {info.icon}
             </div>
