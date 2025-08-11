@@ -1,7 +1,7 @@
 import * as React from "react";
 
-const TOAST_LIMIT = 1;
-const TOAST_REMOVE_DELAY = 1000000;
+const TOAST_LIMIT = 3;            // Max toasts visible at once
+const TOAST_REMOVE_DELAY = 4000;  // Auto-remove after 4 seconds
 
 let count = 0;
 
@@ -12,20 +12,24 @@ function genId() {
 
 const toastTimeouts = new Map();
 
+// Schedule toast removal after delay
 const addToRemoveQueue = (toastId) => {
-  if (toastTimeouts.has(toastId)) {
-    return;
-  }
+  if (toastTimeouts.has(toastId)) return;
 
   const timeout = setTimeout(() => {
     toastTimeouts.delete(toastId);
-    dispatch({
-      type: "REMOVE_TOAST",
-      toastId: toastId,
-    });
+    dispatch({ type: "REMOVE_TOAST", toastId });
   }, TOAST_REMOVE_DELAY);
 
   toastTimeouts.set(toastId, timeout);
+};
+
+// Clear scheduled removal timeout for a toast
+const clearRemoveQueue = (toastId) => {
+  if (toastTimeouts.has(toastId)) {
+    clearTimeout(toastTimeouts.get(toastId));
+    toastTimeouts.delete(toastId);
+  }
 };
 
 const reducer = (state, action) => {
@@ -46,60 +50,49 @@ const reducer = (state, action) => {
 
     case "DISMISS_TOAST": {
       const { toastId } = action;
-
-      if (toastId) {
-        addToRemoveQueue(toastId);
-      } else {
-        state.toasts.forEach((toast) => {
-          addToRemoveQueue(toast.id);
-        });
-      }
+      if (toastId) addToRemoveQueue(toastId);
+      else state.toasts.forEach((toast) => addToRemoveQueue(toast.id));
 
       return {
         ...state,
         toasts: state.toasts.map((t) =>
-          t.id === toastId || toastId === undefined
-            ? {
-                ...t,
-                open: false,
-              }
+          toastId === undefined || t.id === toastId
+            ? { ...t, open: false }
             : t
         ),
       };
     }
+
     case "REMOVE_TOAST":
       if (action.toastId === undefined) {
-        return {
-          ...state,
-          toasts: [],
-        };
+        // Clear all timeouts when removing all toasts
+        state.toasts.forEach(t => clearRemoveQueue(t.id));
+        return { ...state, toasts: [] };
       }
+      clearRemoveQueue(action.toastId);
       return {
         ...state,
         toasts: state.toasts.filter((t) => t.id !== action.toastId),
       };
+
+    default:
+      return state;
   }
 };
 
 const listeners = [];
-
 let memoryState = { toasts: [] };
 
+// Notify all listeners on state change
 function dispatch(action) {
   memoryState = reducer(memoryState, action);
-  listeners.forEach((listener) => {
-    listener(memoryState);
-  });
+  listeners.forEach((listener) => listener(memoryState));
 }
 
+// Main toast API to add, update, dismiss toasts
 function toast(props) {
   const id = genId();
-
-  const update = (props) =>
-    dispatch({
-      type: "UPDATE_TOAST",
-      toast: { ...props, id },
-    });
+  const update = (props) => dispatch({ type: "UPDATE_TOAST", toast: { ...props, id } });
   const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id });
 
   dispatch({
@@ -108,19 +101,14 @@ function toast(props) {
       ...props,
       id,
       open: true,
-      onOpenChange: (open) => {
-        if (!open) dismiss();
-      },
+      onOpenChange: (open) => { if (!open) dismiss(); },
     },
   });
 
-  return {
-    id: id,
-    dismiss,
-    update,
-  };
+  return { id, dismiss, update };
 }
 
+// Hook to use toast state in components
 function useToast() {
   const [state, setState] = React.useState(memoryState);
 
@@ -128,11 +116,9 @@ function useToast() {
     listeners.push(setState);
     return () => {
       const index = listeners.indexOf(setState);
-      if (index > -1) {
-        listeners.splice(index, 1);
-      }
+      if (index > -1) listeners.splice(index, 1);
     };
-  }, [state]);
+  }, []);
 
   return {
     ...state,

@@ -1,34 +1,35 @@
 import { createContext, useEffect, useState } from "react";
 
-export const ScrollContext = createContext(null)
+// Create context to share scroll state across components
+export const ScrollContext = createContext(null);
 
 export const ScrollProvider = ({ children }) => {
+  // Track if user has scrolled more than 100px (e.g., to change navbar style)
+  const [hasScrolled, setHasScrolled] = useState(false);
 
-    const [hasScrolled, setHasScrolled] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
+  // Track if user scrolled more than 900px (e.g., to show "scroll to top" button)
+  const [isVisible, setIsVisible] = useState(false);
 
-    const handleScroll = () => {
-        setHasScrolled(window.scrollY > 100);
-        setIsVisible(window.scrollY > 900);
-    }
+  // Scroll event handler to update scroll states
+  const handleScroll = () => {
+    setHasScrolled(window.scrollY > 100);
+    setIsVisible(window.scrollY > 900);
+  };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
+  useEffect(() => {
+    // Attach scroll listener on mount
+    window.addEventListener("scroll", handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+    // Cleanup listener on unmount to avoid memory leaks
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-
-
-
-
-    return (
-        <ScrollContext.Provider value={{ hasScrolled, setHasScrolled, isVisible,setIsVisible }}>
-            {children}
-        </ScrollContext.Provider>
-    )
-}
-
-
+  // Provide scroll states and setters to all child components
+  return (
+    <ScrollContext.Provider value={{ hasScrolled, setHasScrolled, isVisible, setIsVisible }}>
+      {children}
+    </ScrollContext.Provider>
+  );
+};

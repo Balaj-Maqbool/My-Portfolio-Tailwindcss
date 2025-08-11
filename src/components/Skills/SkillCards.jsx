@@ -2,30 +2,47 @@ import React from 'react'
 import useInView from "../../hooks/IntersectionObserver.js";
 
 const SkillCards = ({ skill }) => {
-    const { ref, isVisible } = useInView({ threshold: .1, rootMargin: "-100px 0px 0px 0px", triggerOnce: true });
-    // console.log(ref,isVisible);
-    
-    return (
-        <div  className={` ${isVisible ? skill.animation:""} rounded-xs z-50  bg-project ring-1 ring-primary/80   p-3 px- lg:p-3.5 sm:p-2.5  w-full  hover:scale-110 `}>
-            <h3 className="text-start text-[.75rem]  sm:text-[.67rem] md:pb-2 md:text-sm ">{skill.name}</h3>
-            {
-                <div className="min-w-full mx-auto h-[.25rem] sm:h-1 md:h-1.5 xl-h-2 relative bg-primary/10 origin-top   rounded-full ">
-                    <div  key={`${skill.name}`}
-                        className=" h-[.26rem] sm:h-1 md:h-1.5 xl-h-2 rounded-full animate-grow-bar "
-                        style={
-                            {
-                                width: skill.level + "%",
-                                background: skill.color
-                            }
-                        }   >
-                    </div>
-                </div>
-            }
+  // Hook to track if the card is visible in viewport, trigger once only
+  const { ref, isVisible } = useInView({
+    threshold: 0.1,
+    rootMargin: "-100px 0px 0px 0px",
+    triggerOnce: true,
+  });
 
-            <div ref={ref} className="text-end  text-[.75rem] font-normal sm:font-normal sm:text-[.67rem] md:text-sm">{skill.level}%</div>
-        </div>
+  return (
+    <div
+      className={`${
+        // Apply skill-specific animation if visible, otherwise fade-in default
+        isVisible ? skill.animation : "animate-fade-in"
+      } rounded-xs z-50 bg-project ring-1 ring-primary/80 p-3 px- lg:p-3.5 sm:p-2.5 w-full hover:scale-110`}
+    >
+      {/* Skill name */}
+      <h3 className="text-start text-[.75rem] sm:text-[.67rem] md:pb-2 md:text-sm">
+        {skill.name}
+      </h3>
 
-    )
-}
+      {/* Progress bar container */}
+      <div className="min-w-full mx-auto h-[.25rem] sm:h-1 md:h-1.5 xl-h-2 relative bg-primary/10 origin-top rounded-full">
+        {/* Progress bar fill, width based on skill level */}
+        <div
+          key={`${skill.name + skill.id}`}
+          className="h-[.26rem] sm:h-1 md:h-1.5 xl-h-2 rounded-full animate-grow-bar"
+          style={{
+            width: skill.level + "%",
+            background: skill.color,
+          }}
+        />
+      </div>
 
-export default SkillCards
+      {/* Skill level percentage displayed right-aligned */}
+      <div
+        ref={ref}
+        className="text-end text-[.75rem] font-normal sm:font-normal sm:text-[.67rem] md:text-sm"
+      >
+        {skill.level}%
+      </div>
+    </div>
+  );
+};
+
+export default SkillCards;

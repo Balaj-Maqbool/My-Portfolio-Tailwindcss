@@ -7,6 +7,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
   const [loadingText, setLoadingText] = useState("Initializing...");
   const [particleStyles, setParticleStyles] = useState([]);
 
+  // Different stages of the loading sequence
   const loadingPhases = [
     { text: "Initializing...", icon: Zap, duration: 600 },
     { text: "Loading Components...", icon: Layers, duration: 1000 },
@@ -22,6 +23,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
     let phaseTimeout;
     let currentProgress = 0;
 
+    // Simulates progress increasing over time
     const updateProgress = () => {
       progressInterval = setInterval(() => {
         currentProgress += Math.random() * 3 + 1;
@@ -35,6 +37,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
       }, 80);
     };
 
+    // Cycles through loading phases sequentially
     const cyclePhases = () => {
       let phaseIndex = 0;
 
@@ -65,6 +68,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
   useEffect(() => {
     if (!showLoading) return;
 
+    // Randomly generates decorative particle styles
     const styles = [...Array(25)].map(() => ({
       width: `${Math.random() * 4 + 2}px`,
       height: `${Math.random() * 4 + 2}px`,
@@ -88,19 +92,20 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
       "rgba(236, 72, 153, 0.4)",
       "rgba(6, 182, 212, 0.4)",
       "rgba(34, 197, 94, 0.4)",
-      "rgba(251, 191, 36, 0.4)",  // light creamy yellow
-    ]
-      ;
+      "rgba(251, 191, 36, 0.4)", // light creamy yellow
+    ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
   if (!showLoading) return null;
+
   const colorPhases = [
     "gradient-text-pink",
     "gradient-text-purple",
     "gradient-text-blue",
     "gradient-text-blue",
-  ]
+  ];
+
   const CurrentIcon = loadingPhases[currentPhase]?.icon || Terminal;
   const CurrentTitleColor = colorPhases[currentPhase] || "gradient-text-blue";
 
@@ -112,8 +117,8 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-            linear-gradient(rgba(200, 220, 255, 0.08) 1px, transparent 1px)
-            linear-gradient(90deg, rgba(200, 220, 255, 0.08) 1px, transparent 1px)`,
+              linear-gradient(rgba(200, 220, 255, 0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(200, 220, 255, 0.08) 1px, transparent 1px)`,
             backgroundSize: "50px 50px",
             animation: "grid-move 20s linear infinite",
           }}
@@ -134,24 +139,21 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         ))}
       </div>
 
-      {/* Main loading content */}
+      {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-8">
-        {/* Logo/Icon container */}
+        {/* Rotating icon rings */}
         <div className="relative mb-8">
           <div className="relative w-24 h-24 mb-6">
-            {/* Outer rotating ring */}
             <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-pink-500 border-r-primary animate-spin" />
             <div className="absolute inset-2 rounded-full border-4 border-transparent border-b-secondary border-l-primary animate-spin-reverse" />
             <div className="absolute inset-4 rounded-full border-2 border-transparent border-t-accent animate-spin-slow" />
-
-            {/* Center icon */}
             <div className="absolute inset-6 rounded-full bg-slate-900/80 backdrop-blur-sm flex items-center justify-center border border-slate-700">
               <CurrentIcon className="w-6 h-6 text-blue-500 animate-pulse" />
             </div>
           </div>
         </div>
 
-        {/* Brand name */}
+        {/* Branding */}
         <div className="mb-6">
           <h1 className={`${CurrentTitleColor} text-3xl md:text-4xl font-bold text-transparent mb-2`}>
             Portfolio
@@ -161,7 +163,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
           </p>
         </div>
 
-        {/* Loading phase indicator */}
+        {/* Phase text */}
         <div className="mb-8 h-6">
           <p className="text-slate-300 text-sm font-medium transition-all duration-300 ease-in-out">
             {loadingText}
@@ -170,7 +172,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
 
         {/* Progress bar */}
         <div className="w-80 px-14 sm:px-5 md:px-1 max-w-sm mb-4">
-          <div className="  h-2 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-600">
+          <div className="h-2 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-600">
             <div
               className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 ease-out relative"
               style={{ width: `${progress}%` }}
@@ -189,7 +191,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className={` h-2 w-2  md:w-2.5 md:h-2.5 rounded-full animate-pulse`}
+              className="h-2 w-2 md:w-2.5 md:h-2.5 rounded-full animate-pulse"
               style={{
                 animationDelay: `${i * 0.3}s`,
                 animationDuration: "1.5s",
@@ -200,88 +202,25 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         </div>
       </div>
 
-      {/* Ambient lighting effects */}
+      {/* Ambient lights */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Top light */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" />
-
-        {/* Side lights */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-purple-500/8 rounded-full blur-3xl animate-float-gentle" />
         <div
           className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-pink-500/8 rounded-full blur-3xl animate-float-gentle"
           style={{ animationDelay: "2s" }}
         />
-
-        {/* Bottom light */}
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-500/8 rounded-full blur-3xl animate-pulse-slow"
           style={{ animationDelay: "1s" }}
         />
       </div>
 
-      {/* Corner decorative elements */}
+      {/* Decorative corners */}
       <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-blue-500/30 rounded-tl-lg" />
       <div className="absolute top-8 right-8 w-16 h-16 border-r-2 border-t-2 border-purple-500/30 rounded-tr-lg" />
       <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-pink-500/30 rounded-bl-lg" />
       <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-cyan-500/30 rounded-br-lg" />
-
-      <style>{`
-        @keyframes grid-move {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(50px, 50px); }
-        }
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        @keyframes float-particle-1 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-          50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
-        }
-        @keyframes float-particle-2 {
-          0%, 100% { transform: translateX(0px) rotate(0deg); opacity: 0.2; }
-          50% { transform: translateX(20px) rotate(-180deg); opacity: 0.7; }
-        }
-        @keyframes float-particle-3 {
-          0%, 100% { transform: translate(0px, 0px) rotate(0deg); opacity: 0.4; }
-          50% { transform: translate(-15px, -15px) rotate(90deg); opacity: 0.9; }
-        }
-        @keyframes float-particle-4 {
-          0%, 100% { transform: translate(0px, 0px) rotate(0deg); opacity: 0.3; }
-          50% { transform: translate(15px, 15px) rotate(-90deg); opacity: 0.6; }
-        }
-        @keyframes spin-reverse {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
-        }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.8; transform: scale(1); }
-          50% { opacity: 0.4; transform: scale(1.1); }
-        }
-        @keyframes float-gentle {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-spin-reverse {
-          animation: spin-reverse 3s linear infinite;
-        }
-        .animate-spin-slow {
-          animation: spin-slow 8s linear infinite;
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-        .animate-float-gentle {
-          animation: float-gentle 3s ease-in-out infinite;
-        }
-        .animate-shimmer {
-          animation: shimmer 2s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 };

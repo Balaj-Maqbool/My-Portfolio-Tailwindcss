@@ -1,8 +1,8 @@
-import { MailIcon, Linkedin, Github } from "lucide-react"
-import { FaWhatsapp } from 'react-icons/fa'
+import { MailIcon, Linkedin, Github } from "lucide-react";
+import { FaWhatsapp } from 'react-icons/fa';
 import { ImFire } from "react-icons/im";
 
-
+// Social media links array with icons and URLs
 const socialLinks = [
     {
         label: "GitHub",
@@ -11,7 +11,7 @@ const socialLinks = [
     },
     {
         label: "LinkedIn",
-        href: "https://linkedin.com/in/balaj-maqbool",
+        href: "https://www.linkedin.com/in/balaj-maqbool",
         icon: <Linkedin className="social-icon-hover" />,
     },
     {
@@ -26,26 +26,33 @@ const socialLinks = [
     },
 ];
 
-
 const Footer = () => {
     return (
-        <div id="footer" className={` w-full  pt-2  pb-10 flex flex-col ' id="footer" `}>
+        <div id="footer" className="w-full pt-2 pb-10 flex flex-col">
+            {/* Social links section */}
             <div className="flex flex-center space-x-5">
-                {
-                    socialLinks.map((link, index) => {
-                        return (
-                            <a key={index} href={link.href} target="blank">{link.icon}</a>
-                        )
-                    })
-                }
+                {socialLinks.map((link, index) => (
+                    <a
+                        key={index}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={link.label}
+                    >
+                        {link.icon}
+                    </a>
+                ))}
             </div>
-            <h3 className=" mt-3  lg:mt-4 text-[.8rem] sm:text-sm md:text-[1rem] xl:text-xl text-text/60 ">
+
+            {/* Footer copyright and design credit */}
+            <h3 className="mt-3 lg:mt-4 text-[.8rem] sm:text-sm md:text-[1rem] xl:text-xl text-text/60 text-center">
                 <p> &copy; 2025 Balaj Maqbool. All rights reserved.</p>
-                <p className="flex flex-center gap-x-1">Designed and built with <ImFire className=" text-accent z-50 text-[1rem] md:text-xl" />passion.</p>
+                <p className="flex justify-center items-center gap-x-1">
+                    Designed and built with <ImFire className="text-accent z-50 text-[1rem] md:text-xl" /> passion.
+                </p>
             </h3>
-
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
