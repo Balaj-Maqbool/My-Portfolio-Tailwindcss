@@ -8,8 +8,8 @@ const HeroIntro = () => {
     const paraRef3= useRef(null)
 
     useWillChangeOnAnimation({ref:paraRef1,willChangeClass:"will-change-[transform,opacity]",animationDelay:4000})
-    useWillChangeOnAnimation({ref:paraRef2,willChangeClass:"will-change-[transform,opacity]",animationDelay:5000})
-    useWillChangeOnAnimation({ref:paraRef3,willChangeClass:"will-change-[transform,opacity]",animationDelay:6000})
+    useWillChangeOnAnimation({ref:paraRef2,willChangeClass:"will-change-[transform,opacity]",animationDelay:4500})
+    useWillChangeOnAnimation({ref:paraRef3,willChangeClass:"will-change-[transform,opacity]",animationDelay:5000})
 
     return (
         <div className='w-full text-[.7rem] lg:text-[1rem] xl:text-[1.1rem] text-center text-text'>

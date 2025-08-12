@@ -4,6 +4,9 @@ import useWillChangeOnAnimation from "@/hooks/useWillChangeOnAnimation.js"
 import HeroHeading from './HeroHeading'
 import HeroIntro from './HeroIntro'
 const Hero = () => {
+    const heroButtonRef = useRef(null)
+    useWillChangeOnAnimation({ref:heroButtonRef,willChangeClass:"will-change-[transform,opacity]",animationDelay:6000})
+    
 
     return (
         // Hero section container, full viewport height and width, flex layout changes for medium screens
@@ -19,7 +22,7 @@ const Hero = () => {
                 <HeroIntro />
 
                 {/* Button with animation and hover scale */}
-                <div className='animate-fade-in-button hover:scale-[1.05]  md:py-3 transition-all duration-300'>
+                <div ref={heroButtonRef} className='animate-fade-in-button hover:scale-[1.05]  md:py-3 transition-all duration-300'>
                     <a className='cosmic-button-primary ' href="#projects">View My Work</a>
                 </div>
             </div>
@@ -32,7 +35,7 @@ const Hero = () => {
             {/* Scroll down indicator positioned absolute at bottom with animation */}
             <div aria-hidden='true' className=' combo-animation  p-2 z-60  absolute  bottom-2.5  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
                 <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text '>scroll</p>
-                <ArrowDown  size={25} className='text-accent font-sans' />
+                <ArrowDown size={25} className='text-accent font-sans' />
             </div>
         </section>
     )
