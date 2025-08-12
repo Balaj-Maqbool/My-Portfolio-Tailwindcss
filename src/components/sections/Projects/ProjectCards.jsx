@@ -19,6 +19,7 @@ const ProjectCards = ({ project }) => {
                     className='w-full h-full object-cover hover:scale-110 focus:scale-110 transition-all ease-in duration-500'
                     src={project.imageAddress}
                     alt={project.title}
+                    loading="lazy"
                 />
             </div>
 
