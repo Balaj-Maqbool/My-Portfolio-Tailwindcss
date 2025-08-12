@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import PageNotFound from "./pages/PageNotFound"
 import { Toaster } from "./components/ui/toaster.jsx" // Notification/toast container
+import Hero from "./components/Hero/Hero.jsx"
 
 const App = () => {
   return (
@@ -14,7 +15,6 @@ const App = () => {
         <Routes>
           {/* Default homepage */}
           <Route index element={<Home />} />
-
           {/* Catch-all route for invalid URLs */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>

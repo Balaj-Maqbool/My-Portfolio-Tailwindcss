@@ -32,7 +32,7 @@ const Navbar = () => {
 
     return (
         // Navbar container, fixed top, responsive styling, fade-in animation
-        <nav className={` px-7 sm:px-10 md:px-16 lg:px-24 xl:px-28  ${hasScrolled ? "bg-background/90 " : ""} fixed z-100 flex items-center justify-between  w-full h-auto top-0 py-3 xl:gap-x-50 animate-fade-in-delay-7 `} >
+        <nav className={` px-8.5  sm:px-10 md:px-16 lg:px-24 xl:px-28   ${hasScrolled ? "bg-background/90 " : "bg-transparent"} fixed z-100 flex items-center justify-between  w-full h-auto top-0 py-3  animate-fade-in-delay-7 `} >
 
             {/* Logo and branding linking to homepage */}
             <Link className="cursor-default text-[1.3rem]   md:text-2xl lg:text-[1.7rem] xl:text-[1.9rem] 2xl:text-3xl" to={"/"}>
@@ -47,7 +47,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop navigation links (hidden on small screens) */}
-            <div className=" ">
+            <div className="">
                 <div className="hidden sm2:flex  px-4 lg:space-x-7 sm:space-x-5 sm2:space-x-2 md:space-x-4 text-sm  xl:space-x-9  lg:text-[.98rem] xl:text-[1rem] 2xl:text-[1.1rem]">
                     {
                         navItems.map((item, key) => (
@@ -64,7 +64,7 @@ const Navbar = () => {
                     }
                 </div>
                 <div className="flex justify-center items-center space-x-1">
-                    <button className="sm2:hidden sm2:z-0 z-200" onClick={() => { setIsMenuOpen(prev => !prev) }}>
+                    <button className="sm2:hidden  z-2010" onClick={() => { setIsMenuOpen(prev => !prev) }}>
                         {isMenuOpen ? <X size={25} /> : <Menu />}
                     </button>
                 </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
 
 
             {/* Mobile menu dropdown, toggled visibility and styles */}
-            <div className={`mobile-menu sm2:hidden ${isMenuOpen ? "z-100 opacity-100 bg-background/10 backdrop-blur-sm pointer-events-auto  " : " opacity-0 pointer-events-none z-30 -translate-y-full"}`}>
+            <div className={`mobile-menu sm2:hidden ${isMenuOpen ? "z-2000 opacity-100 bg-background/10 backdrop-blur-sm pointer-events-auto  " : " opacity-0 pointer-events-none z-30 -translate-y-full"}`}>
                 {
                     navItems.map((item, key) => {
                         return <a
