@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { skills } from "../../data/skills.js"; // Your skills data array
-import SectionHeading from "../SectionHeading.jsx"; // Section title component
+import { skills } from "@/data/skills.js"; // Your skills data array
+import SectionHeading from "@/components/ui/SectionHeading.jsx"; // Section title component
 import SkillCards from "./SkillCards.jsx"; // Individual skill card component
 
 // Define skill categories including 'all' to show all skills
@@ -36,9 +36,8 @@ const Skills = () => {
           >
             {/* Highlight the active category with a bottom border */}
             <span
-              className={`${
-                currentCategory === category ? "border-b-2 border-b-secondary" : ""
-              } pb-1 px-1 gradient-text-grey`}
+              className={`${currentCategory === category ? "border-b-2 border-b-secondary" : ""
+                } pb-1 px-1 gradient-text-grey`}
             >
               {category}
             </span>

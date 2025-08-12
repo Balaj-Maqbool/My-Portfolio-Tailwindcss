@@ -1,7 +1,7 @@
 import React from 'react'
-import useInView from '../../hooks/IntersectionObserver'
+import useInView from '@/hooks/IntersectionObserver.js'
 
-const ContactInfoCard = ({ info }) => {
+const ContactInfoCards = ({ info }) => {
   // Hook to track visibility with 10% threshold
   const { ref, isVisible } = useInView(0.1)
 
@@ -13,14 +13,14 @@ const ContactInfoCard = ({ info }) => {
       target="_blank" // Open in new tab
       rel="noopener noreferrer" // Security best practice for external links
       className={`
-        ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"} 
+        ${isVisible ? "animate-when-visible" : "animate-when-invisible"} 
         transition-all ease-linear duration-500 z-50 
         flex justify-start sm:flex-col md:flex-row sm:h-full 
-        w-[90%] space-x-3 sm:space-x-0 md:w-[90%] lg:w-[65%] p-2
-      `}
+        w-[90%] space-x-3 sm:space-x-0 md:w-[90%] lg:w-[65%] p-2  `}
+      aria-label={"My" + info.title}
     >
       {/* Icon container with responsive sizing and hover effect */}
-      <div className="h-6 w-6 sm:w-5 sm:h-5 md:w-auto md:h-auto flex mr-5 flex-center md:p-4 sm:mr-2 md:mr-5 text-primary hover:text-primary/70">
+      <div aria-hidden='true' className="h-6 w-6 sm:w-5 sm:h-5 md:w-auto md:h-auto flex mr-5 flex-center md:p-4 sm:mr-2 md:mr-5 text-primary hover:text-primary/70">
         {info.icon}
       </div>
 
@@ -35,4 +35,4 @@ const ContactInfoCard = ({ info }) => {
   )
 }
 
-export default ContactInfoCard
+export default ContactInfoCards

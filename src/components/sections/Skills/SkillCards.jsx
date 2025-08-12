@@ -1,5 +1,5 @@
 import React from 'react'
-import useInView from "../../hooks/IntersectionObserver.js";
+import useInView from "@/hooks/IntersectionObserver.js";
 
 const SkillCards = ({ skill }) => {
   // Hook to track if the card is visible in viewport, trigger once only
@@ -13,8 +13,8 @@ const SkillCards = ({ skill }) => {
     <div
       className={`${
         // Apply skill-specific animation if visible, otherwise fade-in default
-        isVisible ? skill.animation : "animate-fade-in"
-      } transition-all ease-in-out duration-500 rounded-xs z-50 bg-box ring-1 ring-primary/80 p-3 px- lg:p-3.5 sm:p-2.5 w-full hover:scale-110`}
+        isVisible ? `will-change-[transform,opacity] ${skill.animation}` : "animate-when-invisible"
+        } transition-all ease-in-out duration-500 rounded-xs z-50 bg-box ring-1 ring-primary/80 p-3 px- lg:p-3.5 sm:p-2.5 w-full hover:scale-110`}
     >
       {/* Skill name */}
       <h3 className="text-start text-[.75rem] sm:text-[.67rem] md:pb-2 md:text-sm">
@@ -26,7 +26,7 @@ const SkillCards = ({ skill }) => {
         {/* Progress bar fill, width based on skill level */}
         <div
           key={`${skill.name + skill.id}`}
-          className="h-[.26rem] sm:h-1 md:h-1.5 xl-h-2 rounded-full animate-grow-bar"
+          className="h-[.26rem] sm:h-1 md:h-1.5 xl-h-2 rounded-full will-change-[width] animate-grow-bar"
           style={{
             width: skill.level + "%",
             background: skill.color,

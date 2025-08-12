@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react'
-import SectionHeading from '../SectionHeading.jsx'
+import SectionHeading from "@/components/ui/SectionHeading.jsx";
 import { Mail, Phone, MapPin, TextIcon, Send } from "lucide-react"
-import useInView from '../../hooks/IntersectionObserver.js'
-import { useToast } from "../../hooks/use-toast.js"
-import ContactInfoCard from './ContactInfoCard.jsx'
+import useInView from '@/hooks/IntersectionObserver.js'
+import { useToast } from "@/hooks/use-toast.js"
+import ContactInfoCard from './ContactInfoCards.jsx'
 import emailjs from "emailjs-com"
 
 const contactInfo = [
@@ -66,7 +66,7 @@ const Contact = () => {
             <SectionHeading p1={"Get In"} p2={"Touch"} />
 
             {/* Intro Text with responsive display */}
-            <div ref={ref} className={`${isVisible ? "scale-100 opacity-100" : "opacity-0 scale-0"} transition-all ease-in-out duration-700 w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem] xl:text-[1rem] text-center gradient-text-grey`}>
+            <div ref={ref} className={`${isVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-in-out duration-700 w-full text-[0.82rem] sm:text-sm my-5 space-y-1 lg:text-[.9rem] xl:text-[1rem] text-center gradient-text-grey`}>
                 <div className='hidden md:flex flex-center '>
                     <p className='mr-1'>Looking for a <strong className='gradient-text-pink'>developer</strong> who blends creativity with <strong className='gradient-text-pink'>clean code</strong>? Let’s chat </p>
                     <span><TextIcon strokeWidth={2.5} className='text-accent' size={20} /></span>
@@ -89,44 +89,52 @@ const Contact = () => {
                 </div>
 
                 {/* Contact Form */}
-                <div ref={infoRef} className={`${infoIsVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"} transition-all ease-in-out duration-700 flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]`}>
+                <div ref={infoRef} className={`${infoIsVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-in-out duration-700 flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]`}>
                     <div className='flex flex-col items-center space-y-3 h-full w-full rounded-md py-5 lg:py-7 bg-box'>
                         <h3 className='text-text font-sans text-[1.15rem] md:text-[1.35rem]'>Send a Message</h3>
-                        <form className='text-sm w-full h-full px-7 pt-3 flex flex-col space-y-6' ref={form} onSubmit={handleSubmit}>
+                        <form
+                            className="text-sm w-full h-full px-7 pt-3 flex flex-col space-y-6"
+                            ref={form}
+                            onSubmit={handleSubmit}
+                        >
                             <input
-                                className='form-input'
+                                className="form-input"
                                 type="text"
                                 required
-                                placeholder='Your Name'
-                                name='user_name'
+                                placeholder="Your Name"
+                                aria-label="Your Name"
+                                name="user_name"
                                 value={name}
                                 onChange={(e) => SetName(e.target.value)}
                             />
                             <input
-                                className='form-input'
+                                className="form-input"
                                 type="email"
                                 required
-                                placeholder='Email'
-                                name='user_email'
+                                placeholder="Email"
+                                aria-label="Email"
+                                name="user_email"
                                 value={email}
                                 onChange={(e) => SetEmail(e.target.value)}
                             />
                             <textarea
-                                className='form-input py-5 md:py-6'
-                                placeholder='Your Message'
+                                className="form-input py-5 md:py-6"
+                                placeholder="Your Message"
+                                aria-label="Your Message"
                                 required
-                                name='message'
+                                name="message"
                                 value={message}
                                 onChange={(e) => SetMessage(e.target.value)}
                             ></textarea>
                             <button
                                 className={`${sendingMessage ? "cosmic-button-secondary" : "cosmic-button-primary gap-x-1"}`}
-                                type='submit'
+                                type="submit"
                                 disabled={sendingMessage}
                             >
                                 {sendingMessage ? "Sending Message ... " : <>Send Message<Send size={20} /></>}
                             </button>
                         </form>
+
                     </div>
                 </div>
             </div>

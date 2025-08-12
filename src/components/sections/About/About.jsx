@@ -1,6 +1,6 @@
-import { aboutCards, paragraphs } from "../../data/about.jsx";
-import useInView from "../../hooks/IntersectionObserver.js";
-import SectionHeading from "../SectionHeading.jsx";
+import { aboutCards, paragraphs } from "@/data/about.jsx";
+import useInView from "@/hooks/IntersectionObserver.js";
+import SectionHeading from "@/components/ui/SectionHeading.jsx";
 import AboutCards from "./AboutCards.jsx";
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 z-10  items-center justify-center gap-5 mt-7 md:px-20 py-5'>
 
                 {/* Text content with fade & scale animation */}
-                <div ref={ref} className={`${isVisible ? "scale-100 opacity-100 " : "opacity-0 scale-30"} transition-all ease-in-out duration-1000 flex flex-col flex-center space-y-4 text-text  md:px-10 `}>
+                <div ref={ref} className={`${isVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-in-out duration-1000 flex flex-col flex-center space-y-4 text-text  md:px-10 `}>
                     {/* Developer title only visible on large screens */}
                     <h1 className=' hidden lg:inline-block md:text-xl  gradient-text-teal'>MERN Stack Developer</h1>
                     {/* Map through paragraphs array to display about text */}
@@ -33,7 +33,7 @@ const About = () => {
                 </div>
 
                 {/* Cards container with fade & scale animation */}
-                <div ref={cardContaineRef} className={` ${isCardContainerVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"} transition-all ease-linear duration-700 flex flex-col flex-center space-y-3.5`}>
+                <div ref={cardContaineRef} className={` ${isCardContainerVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-linear duration-700 flex flex-col flex-center space-y-3.5`}>
                     {/* Render about cards using AboutCards component */}
                     {
                         aboutCards.map((card, index) => {

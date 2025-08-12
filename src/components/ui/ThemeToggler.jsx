@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { Sun, Moon } from "lucide-react"
-import { ThemeContext } from "../context/ThemeContext"
+import { ThemeContext } from "@/context/ThemeContext.jsx"
 
 // ThemeToggler component toggles between dark and light theme
 const ThemeToggler = () => {

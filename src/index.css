@@ -7,25 +7,40 @@
 
   /* Define CSS variables for theming */
   :root {
-    --main-text-color: #02d4d8;                      /* Primary text color - cyan */
-    --secondary-color: rgba(0, 150, 202, 1);         /* Secondary accent color */
-    --background-color: rgb(0, 0, 0);                /* Default background - black */
-    --text-color: rgb(246, 246, 246);                 /* Default text color - off white */
-    --accent-color: oklch(57.7% 0.245 27.325);       /* Accent color using OKLCH color space */
-    --theme-icon-color: rgb(245, 197, 3);             /* Icon color for theme */
-    --box-background-color: rgba(37, 99, 235, 0.1);  /* Background for boxes with opacity */
-    --meteor-color: linear-gradient(to bottom, transparent, white, white, white); /* Gradient for meteor animation */
+    --main-text-color: #02d4d8;
+    /* Primary text color - cyan */
+    --secondary-color: rgba(0, 150, 202, 1);
+    /* Secondary accent color */
+    --background-color: rgb(0, 0, 0);
+    /* Default background - black */
+    --text-color: rgb(246, 246, 246);
+    /* Default text color - off white */
+    --accent-color: oklch(57.7% 0.245 27.325);
+    /* Accent color using OKLCH color space */
+    --theme-icon-color: rgb(245, 197, 3);
+    /* Icon color for theme */
+    --box-background-color: rgba(37, 99, 235, 0.1);
+    /* Background for boxes with opacity */
+    --meteor-color: linear-gradient(to bottom, transparent, white, white, white);
+    /* Gradient for meteor animation */
   }
 
   /* Light mode overrides */
   .light {
-    --background-color: rgb(255, 255, 255);          /* Light background - white */
-    --text-color: rgb(11, 11, 11);                    /* Dark text for light mode */
-    --font-family: Arial, sans-serif, Verdana, Geneva, Tahoma; /* Font stack for light mode */
-    --border-color: black;                            /* Border color for light mode */
-    --theme-icon-color: rgb(6, 6, 6);                 /* Dark icon color for light mode */
-    --main-text-color: oklch(54.777% 0.28861 302.203); /* Slightly different main text color */
-    --accent-color: rgba(254, 17, 17, 0.97);          /* Accent color red-ish for light mode */
+    --background-color: rgb(255, 255, 255);
+    /* Light background - white */
+    --text-color: rgb(11, 11, 11);
+    /* Dark text for light mode */
+    --font-family: Arial, sans-serif, Verdana, Geneva, Tahoma;
+    /* Font stack for light mode */
+    --border-color: black;
+    /* Border color for light mode */
+    --theme-icon-color: rgb(6, 6, 6);
+    /* Dark icon color for light mode */
+    --main-text-color: oklch(54.777% 0.28861 302.203);
+    /* Slightly different main text color */
+    --accent-color: rgba(254, 17, 17, 0.97);
+    /* Accent color red-ish for light mode */
   }
 
   /* Utility to prevent scrolling when applied */
@@ -33,42 +48,50 @@
     overflow: hidden;
   }
 
-  
+
 
   /* Global reset for all elements */
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif, Verdana, Geneva, Tahoma; /* Global font fallback stack */
+    font-family: Arial, sans-serif, Verdana, Geneva, Tahoma;
+    /* Global font fallback stack */
   }
 
   /* Smooth scrolling for the entire html */
   html {
     scroll-behavior: smooth;
-    scrollbar-width: thin; /* Firefox thin scrollbar */
+    scrollbar-width: thin;
+    /* Firefox thin scrollbar */
   }
 
   /* Body styling */
   body {
     text-align: center;
-    @apply bg-background; /* Tailwind utility for background color */
-    transition: all .5s ease-in-out; /* Smooth transitions for theme changes */
+    @apply bg-background;
+    /* Tailwind utility for background color */
+    transition: all .5s ease-in-out;
+    /* Smooth transitions for theme changes */
   }
 
   /* Root container for react or main content */
   #root {
     max-width: 100%;
     padding: 0;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
+    /* Center horizontally */
   }
 
   /* Autofill styles for input fields */
   input:-webkit-autofill {
-    box-shadow: 0 0 0px 1000px #0d0d0d inset !important; /* Dark background on autofill */
-    -webkit-text-fill-color: #f4f4f5 !important;         /* Light text color */
+    box-shadow: 0 0 0px 1000px #0d0d0d inset !important;
+    /* Dark background on autofill */
+    -webkit-text-fill-color: #f4f4f5 !important;
+    /* Light text color */
     color: white;
-    transition: var(--background-color) 5000s ease-in-out 0s; /* Prevent autofill flash */
+    transition: var(--background-color) 5000s ease-in-out 0s;
+    /* Prevent autofill flash */
   }
 }
 
@@ -102,11 +125,11 @@
   --animate-star: pulse-star ease-in-out infinite;
   --animate-meteor: meteor-shower linear infinite;
 
-  --animate-fade-in: fade-in step-end 1s;
+  --animate-fade-in: fade-in step-end .5s;
   --animate-fade-in-delay-1: fade-in step-end 1.30s;
   --animate-fade-in-delay-2: fade-in step-end 1.50s;
-  --animate-fade-in-delay-3: fade-in step-end 2.00s;
-  --animate-fade-in-delay-4: fade-in ease-in-out 2.50s;
+  --animate-fade-in-delay-3: fade-in step-end 2.10s;
+  --animate-fade-in-delay-4: fade-in ease-in-out 2.60s;
   --animate-fade-in-delay-5: fade-in ease-in-out 3.00s;
   --animate-fade-in-delay-6: fade-in ease-in-out 3.50s;
   --animate-fade-in-button: fade-in-btn ease-in-out 4.00s;
@@ -125,6 +148,7 @@
       transform: translateX(-20px);
       opacity: 0;
     }
+
     100% {
       /* Final position: normal and fully visible */
       transform: translateX(0px);
@@ -136,8 +160,10 @@
     0% {
       width: 0%;
     }
+
     100% {
-      width: :auto; /* Typo here: double colon before auto, but no logic changes */
+      width: :auto;
+      /* Typo here: double colon before auto, but no logic changes */
     }
   }
 
@@ -145,9 +171,11 @@
     0% {
       transform: translateY(10px);
     }
+
     50% {
       transform: translateY(-20px);
     }
+
     100% {
       transform: translateY(10px);
     }
@@ -158,9 +186,12 @@
       transform: translateX(-200px);
       opacity: 0;
     }
-    50%, 75% {
+
+    50%,
+    75% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -171,9 +202,12 @@
       transform: translateX(200px);
       opacity: 0;
     }
-    50%, 75% {
+
+    50%,
+    75% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -184,18 +218,24 @@
       transform: translateY(300px);
       opacity: 0;
     }
-    50%, 75% {
+
+    50%,
+    75% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
   }
 
   @keyframes pulse-star {
-    0%, 100% {
+
+    0%,
+    100% {
       opacity: 1;
     }
+
     50% {
       opacity: 0.5;
     }
@@ -207,10 +247,12 @@
       opacity: 1;
       box-shadow: 0 0 25px 5px rgba(0, 25, 255, 0.4);
     }
+
     50% {
       box-shadow: 0 0 25px 5px rgba(0, 25, 255, 0.4);
       opacity: 1;
     }
+
     100% {
       transform: translateY(500px);
       opacity: 0;
@@ -226,6 +268,7 @@
       transform: translateX(100%);
       opacity: 0;
     }
+
     100% {
       transform: translateX(0);
       opacity: 1;
@@ -237,6 +280,7 @@
       transform: translateX(-100%);
       opacity: 0;
     }
+
     100% {
       transform: translateX(0);
       opacity: 1;
@@ -249,6 +293,9 @@
    ====================== */
 @layer components {
 
+  .my-name{
+    @apply gradient-text-blue text-[2rem] sm:text-[1.92rem] lg:text-[3.3rem] md:text-[2.2rem] xl:text-[4rem] font-bold animate-fade-in-delay-2
+  }
   /* Form input styling */
   .form-input {
     @apply text-sm py-2 md:text-[1rem] w-full p-1.5 pl-4 bg-background rounded-sm focus:outline-none focus:ring-1 ring-primary;
@@ -312,11 +359,27 @@
   .project-links {
     @apply text-text/70 hover:text-secondary hover:scale-115 transition-all ease-in duration-100;
   }
+
+
+
 }
 
 /* ======================
    Utility Classes
    ====================== */
+/* When visible */
+@utility animate-when-visible {
+  will-change: transform, opacity;
+  opacity: 1;
+  scale: 1;
+}
+
+/* When not visible */
+@utility animate-when-invisible {
+  will-change: auto;
+  opacity: 0;
+  scale: 0;
+}
 
 @utility text-glow {
   /* Subtle glowing text effect */
@@ -400,6 +463,7 @@
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(50px, 50px);
   }
@@ -409,16 +473,20 @@
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
 
 @keyframes float-particle-1 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
     opacity: 0.3;
   }
+
   50% {
     transform: translateY(-20px) rotate(180deg);
     opacity: 0.8;
@@ -426,10 +494,13 @@
 }
 
 @keyframes float-particle-2 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(0px) rotate(0deg);
     opacity: 0.2;
   }
+
   50% {
     transform: translateX(20px) rotate(-180deg);
     opacity: 0.7;
@@ -437,10 +508,13 @@
 }
 
 @keyframes float-particle-3 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0px, 0px) rotate(0deg);
     opacity: 0.4;
   }
+
   50% {
     transform: translate(-15px, -15px) rotate(90deg);
     opacity: 0.9;
@@ -448,10 +522,13 @@
 }
 
 @keyframes float-particle-4 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0px, 0px) rotate(0deg);
     opacity: 0.3;
   }
+
   50% {
     transform: translate(15px, 15px) rotate(-90deg);
     opacity: 0.6;
@@ -462,6 +539,7 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
@@ -471,16 +549,20 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes pulse-slow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.4;
     transform: scale(1.1);
@@ -488,9 +570,12 @@
 }
 
 @keyframes float-gentle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -520,6 +605,7 @@
 
 
 /* Combined animation class */
-  .combo-animation {
-    animation: var(--animate-fade-in-delay-7), bounce 1s ease-in-out infinite 1s;
-  }
+.combo-animation {
+  will-change: opacity, transform;
+  animation: var(--animate-fade-in-delay-7), bounce 1s ease-in-out infinite 1s;
+}

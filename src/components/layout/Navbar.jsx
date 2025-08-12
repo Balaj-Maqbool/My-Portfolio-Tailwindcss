@@ -2,8 +2,9 @@ import { Link } from "react-router-dom"
 import { Contact2, Home, Laptop2, Menu, Code2, X, } from "lucide-react"
 import { GoPerson } from "react-icons/go";
 import { RiLinksFill } from "react-icons/ri";
-import { useContext, useEffect, useState } from "react"
-import { ScrollContext } from "../../context/ScrollContext.jsx";
+import { useContext, useEffect, useRef, useState } from "react"
+import { ScrollContext } from "@/context/ScrollContext.jsx";
+import useWillChangeOnAnimation from "../../hooks/useWillChangeOnAnimation";
 
 // Navigation items with ids, labels, anchor paths, and icons
 const navItems = [
@@ -30,9 +31,15 @@ const Navbar = () => {
             document.documentElement.classList.remove("no-scroll")
     }, [isMenuOpen])
 
+    const navRef = useRef(null)
+    useWillChangeOnAnimation({
+        ref: navRef,
+        willChangeClass: 'will-change-[transform,opacity]',
+        animationDelay: 6000
+    })
     return (
         // Navbar container, fixed top, responsive styling, fade-in animation
-        <nav className={` px-8  sm:px-10 md:px-16 lg:px-24 xl:px-28   ${hasScrolled ? "bg-background/90 " : "bg-transparent"} fixed z-100 flex items-center justify-between  w-full h-auto top-0 py-3  animate-fade-in-delay-2 `} >
+        <nav loading='lazy' ref={navRef} className={`animate-fade-in-delay-7 px-8  sm:px-10 md:px-16 lg:px-24 xl:px-28   ${hasScrolled ? "bg-background/90" : "bg-transparent"} fixed z-100 flex items-center justify-between  w-full h-auto top-0 py-3  `} >
 
             {/* Logo and branding linking to homepage */}
             <Link className="cursor-default text-[1.3rem]   md:text-2xl lg:text-[1.7rem] xl:text-[1.9rem] 2xl:text-3xl" to={"/"}>
@@ -74,7 +81,7 @@ const Navbar = () => {
 
 
             {/* Mobile menu dropdown, toggled visibility and styles */}
-            <div className={`mobile-menu sm2:hidden ${isMenuOpen ? "z-2000 opacity-100 bg-background/10 backdrop-blur-sm pointer-events-auto  " : " opacity-0 pointer-events-none z-0 -translate-y-full"}`}>
+            <div className={`mobile-menu sm2:hidden ${isMenuOpen ? " will-change-[transform,opacity] z-2000 opacity-100 bg-background/10 backdrop-blur-sm pointer-events-auto  " : "will-change-auto opacity-0 pointer-events-none z-0 -translate-y-full"}`}>
                 {
                     navItems.map((item, key) => {
                         return <a

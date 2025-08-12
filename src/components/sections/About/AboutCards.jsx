@@ -1,9 +1,9 @@
 const AboutCards = ({ card, index }) => {
     return (
         // Container for each card with animation delay based on index for staggered effect
-        <div className={`about-card`} style={{ animationDelay: ++index + "s" }}>
+        <div className={` will-change-transform about-card`} style={{ animationDelay: ++index + "s" }}>
             {/* Icon container with styling and background */}
-            <div className="h-8 w-8 text-white outline-2 outline-primary rounded-full bg-primary/40 flex flex-center">
+            <div aria-hidden='true' className="h-8 w-8 text-white outline-2 outline-primary rounded-full bg-primary/40 flex flex-center">
                 {card.icon}
             </div>
             {/* Text content container */}

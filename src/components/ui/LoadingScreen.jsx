@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Terminal, Code, Zap, Layers } from "lucide-react";
 
 const LoadingScreen = ({ showLoading, setShowLoading }) => {
@@ -114,7 +114,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-20">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 will-change-[transform,opacity]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(200, 220, 255, 0.08) 1px, transparent 1px),
@@ -130,7 +130,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         {particleStyles.map((style, i) => (
           <div
             key={`particle-${i}`}
-            className="absolute animate-float-particle"
+            className="will-change-[transform,opacity] absolute animate-float-particle"
             style={{
               ...style,
               animation: `float-particle-${(i % 4) + 1} ${style.animationDuration} linear infinite`,
@@ -144,18 +144,18 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         {/* Rotating icon rings */}
         <div className="relative mb-8">
           <div className="relative w-24 h-24 mb-6">
-            <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-pink-500 border-r-primary animate-spin" />
-            <div className="absolute inset-2 rounded-full border-4 border-transparent border-b-secondary border-l-primary animate-spin-reverse" />
-            <div className="absolute inset-4 rounded-full border-2 border-transparent border-t-accent animate-spin-slow" />
+            <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-pink-500 border-r-primary will-change-transform animate-spin" />
+            <div className="absolute inset-2 rounded-full border-4 border-transparent border-b-secondary border-l-primary will-change-transform animate-spin-reverse" />
+            <div className="absolute inset-4 rounded-full border-2 border-transparent border-t-accent will-change-transform animate-spin-slow" />
             <div className="absolute inset-6 rounded-full bg-slate-900/80 backdrop-blur-sm flex items-center justify-center border border-slate-700">
-              <CurrentIcon className="w-6 h-6 text-blue-500 animate-pulse" />
+              <CurrentIcon className="w-6 h-6 text-blue-500 will-change-[transform,opacity]  animate-pulse" />
             </div>
           </div>
         </div>
 
         {/* Branding */}
         <div className="mb-6">
-          <h1 className={`${CurrentTitleColor} text-3xl md:text-4xl font-bold text-transparent mb-2`}>
+          <h1 className={`will-change-[color] ${CurrentTitleColor} text-3xl md:text-4xl font-bold text-transparent mb-2`}>
             Portfolio
           </h1>
           <p className="text-slate-400 text-sm tracking-wide">
@@ -165,7 +165,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
 
         {/* Phase text */}
         <div className="mb-8 h-6">
-          <p className="text-slate-300 text-sm font-medium transition-all duration-300 ease-in-out">
+          <p className="text-green-500 text-sm font-medium will-change-contents transition-all duration-300 ease-in-out">
             {loadingText}
           </p>
         </div>
@@ -174,7 +174,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
         <div className="w-80 px-14 sm:px-5 md:px-1 max-w-sm mb-4">
           <div className="h-2 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-600">
             <div
-              className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 ease-out relative"
+              className="will-change-transform h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 ease-out relative"
               style={{ width: `${progress}%` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
@@ -191,7 +191,7 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="h-2 w-2 md:w-2.5 md:h-2.5 rounded-full animate-pulse"
+              className="h-2 w-2 md:w-2.5 md:h-2.5 rounded-full will-change-transform animate-pulse"
               style={{
                 animationDelay: `${i * 0.3}s`,
                 animationDuration: "1.5s",
@@ -204,14 +204,14 @@ const LoadingScreen = ({ showLoading, setShowLoading }) => {
 
       {/* Ambient lights */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-purple-500/8 rounded-full blur-3xl animate-float-gentle" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl will-change-transform animate-pulse-slow" />
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-purple-500/8 rounded-full blur-3xl will-change-transform animate-float-gentle" />
         <div
           className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-pink-500/8 rounded-full blur-3xl animate-float-gentle"
           style={{ animationDelay: "2s" }}
         />
         <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-500/8 rounded-full blur-3xl animate-pulse-slow"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-500/8 rounded-full blur-3xl will-change-transform animate-pulse-slow"
           style={{ animationDelay: "1s" }}
         />
       </div>

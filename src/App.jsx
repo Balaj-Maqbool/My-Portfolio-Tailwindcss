@@ -1,8 +1,8 @@
 import React from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-const Home = React.lazy(() => import("./pages/Home"))
-const PageNotFound = React.lazy(() => import("./pages/PageNotFound"))
-import { Toaster } from "./components/ui/toaster.jsx" // Notification/toast container
+const Home = React.lazy(() => import("@/pages/Home"))
+const PageNotFound = React.lazy(() => import("@/pages/PageNotFound"))
+import { Toaster } from "@/components/ui/toaster.jsx" // Notification/toast container
 
 
 

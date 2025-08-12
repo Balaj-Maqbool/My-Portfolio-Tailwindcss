@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import LoadingScreen from './LoadingScreen.jsx';
+import LoadingScreen from '@/components/ui/LoadingScreen.jsx';
 
-import StarBackground from "../components/BackGround/BackGround.jsx"
-import Navbar from '../components/Navbar/Navbar.jsx';
-import Hero from '../components/Hero/Hero.jsx';
-import About from '../components/About/About.jsx';
-import Skills from '../components/Skills/Skills.jsx';
-import Projects from '../components/Projects/Projects.jsx';
-import Contact from '../components/Contact/Contact.jsx';
-import Footer from '../components/Footer/Footer.jsx';
-import BackToTop from '../components/BackToTop.jsx';
+import StarBackground from "@/components/layout/BackGround.jsx"
+import Navbar from '@/components/layout/Navbar.jsx';
+import Hero from '@/components/sections/Hero/Hero.jsx';
+import About from '@/components/sections/About/About.jsx';
+import Skills from '@/components/sections/Skills/Skills.jsx';
+import Projects from '@/components/sections/Projects/Projects.jsx';
+import Contact from '@/components/sections/Contact/Contact.jsx';
+import Footer from '@/components/layout/Footer.jsx';
+import BackToTop from '@/components/ui/BackToTop.jsx';
 import { Helmet } from 'react-helmet';
 
 const Home = () => {
+
   const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
     // Show loading screen for 5 seconds, then hide
-    const timer = setTimeout(() => setShowLoading(false), 4500);
+    const timer = setTimeout(() => setShowLoading(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 

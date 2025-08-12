@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const StarBackground = () => {
     // State to hold stars and meteors data
@@ -12,17 +12,17 @@ const StarBackground = () => {
     }, []);
 
     useEffect(() => {
-            const handleResize = () => {
-                generateStars();
-                generateMeteors()
-            }
+        const handleResize = () => {
+            generateStars();
+            generateMeteors()
+        }
 
-            window.addEventListener('resize', handleResize)
+        window.addEventListener('resize', handleResize)
 
-            return () => {
-                window.removeEventListener('resize', handleResize)
-            }
-        }, [])
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
 
     // Generate star data based on viewport size
@@ -69,6 +69,7 @@ const StarBackground = () => {
                 {/* Render stars */}
                 {stars.map((star) => (
                     <div
+                        className="will-change-[transform,opacity] star animate-star"
                         key={star.id}
                         style={{
                             height: star.size + "px",
@@ -78,13 +79,14 @@ const StarBackground = () => {
                             opacity: star.opacity,
                             animationDuration: star.animationDuration + "s",
                         }}
-                        className="star animate-star"
+
                     ></div>
                 ))}
 
                 {/* Render meteors */}
                 {meteors.map((meteor) => (
                     <div
+                        className="will-change-[transform,opacity] meteor animate-meteor"
                         key={meteor.id}
                         style={{
                             top: meteor.y + "%",
@@ -93,7 +95,7 @@ const StarBackground = () => {
                             width: meteor.width + "px",
                             animationDuration: meteor.animationDuration + "s",
                         }}
-                        className="meteor animate-meteor"
+
                     ></div>
                 ))}
             </div>
