@@ -33,7 +33,7 @@ const Projects = () => {
                 {/* Visible on mobile */}
                 <p className='sm:hidden'>
                   A glimpse of <strong className='gradient-text-pink font-normal'>real-world projects</strong> where ideas meet 
-                  <strong className='gradient-text-pink font-normal'>clean code</strong> and <strong className='gradient-text-pink font-normal'>great design</strong>. 
+                  <strong className='gradient-text-pink font-normal'> clean code</strong> and <strong className='gradient-text-pink font-normal'>great design</strong>. 
                   <span>Built with <strong className='gradient-text-pink font-normal'>precision</strong>, <strong className='gradient-text-pink font-normal'>passion</strong>, and <strong className='gradient-text-pink font-normal'>purpose</strong>.</span>
                 </p>
             </div>
