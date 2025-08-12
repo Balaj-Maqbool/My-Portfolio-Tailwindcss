@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
           ref={ref} 
           className={`${isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"} 
           flex flex-col ring-[oklch(57.7%_0.245_27.325)] active:ring-1 hover:ring-1 hover:scale-[1.03] active:scale-105 
-          transition-all ease-in-out duration-300 z-100 rounded-md bg-box`}
+          transition-all ease-in-out duration-1000 z-100 rounded-md bg-box`}
         >
             {/* Project Image Container */}
             <div className='w-full h-[100px] xs:h-[115px] sm:h-[100px] sm2:h-[120px] md:h-[110px] md2:h-[120px] lg:h-[130px] xl:h-[140px] rounded-t-md overflow-hidden'>
