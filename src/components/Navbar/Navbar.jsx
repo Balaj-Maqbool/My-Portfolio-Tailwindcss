@@ -74,7 +74,7 @@ const Navbar = () => {
 
 
             {/* Mobile menu dropdown, toggled visibility and styles */}
-            <div className={`mobile-menu sm2:hidden ${isMenuOpen ? "z-2000 opacity-100 bg-background/10 backdrop-blur-sm pointer-events-auto  " : " opacity-0 pointer-events-none z-30 -translate-y-full"}`}>
+            <div className={`mobile-menu sm2:hidden ${isMenuOpen ? "z-2000 opacity-100 bg-background/10 backdrop-blur-sm pointer-events-auto  " : " opacity-0 pointer-events-none z-0 -translate-y-full"}`}>
                 {
                     navItems.map((item, key) => {
                         return <a

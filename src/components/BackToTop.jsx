@@ -15,7 +15,7 @@ const BackToTop = () => {
     return (
         <button
             onClick={scrollToTop}
-            className="cosmic-button-secondary border-primary fixed bottom-7 animate-[bounce_ease-in-out_6s_infinite] p-1.5 sm:p-2 md:p-2 lg:p-3 xl:p-4 right-4 rounded-full z-200"
+            className="cosmic-button-secondary border-primary fixed bottom-7 animate-[bounce_ease-in-out_6s_infinite] p-1.5 sm:p-2 md:p-2 lg:p-3 xl:p-4 right-4 rounded-full z-99"
             aria-label="Back to top"
         >
             <ArrowUp className='text-accent' />

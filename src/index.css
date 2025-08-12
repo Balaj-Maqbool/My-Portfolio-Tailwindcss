@@ -320,7 +320,7 @@
   }
 
   .mobile-menu {
-    @apply text-sm sm:text-[1rem]  flex flex-col h-screen min-w-screen justify-baseline items-center space-y-7 absolute top-0 left-0 right-0 px-0 py-16 transition-all ease-in-out duration-[1s];
+    @apply text-sm sm:text-[1rem]  flex flex-col h-screen min-w-screen justify-baseline items-center space-y-7 absolute top-0 z-2000 left-0 right-0 px-0 py-16 transition-all ease-in-out duration-[1s];
   }
 
   .profile-image {
