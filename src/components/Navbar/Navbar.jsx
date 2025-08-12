@@ -7,7 +7,7 @@ import { ScrollContext } from "../../context/ScrollContext.jsx";
 
 // Navigation items with ids, labels, anchor paths, and icons
 const navItems = [
-    { id: "home", name: "Home", path: "#hero", icon: <Home size={20} /> },
+    { id: "home", name: "Home", path: "#", icon: <Home size={20} /> },
     { id: "about", name: "About", path: "#about", icon: <GoPerson size={20} /> },
     { id: "skills", name: "Skills", path: "#skills", icon: <Code2 size={20} /> },
     { id: "projects", name: "Projects", path: "#projects", icon: <Laptop2 size={20} /> },
@@ -32,7 +32,7 @@ const Navbar = () => {
 
     return (
         // Navbar container, fixed top, responsive styling, fade-in animation
-        <nav className={` px-8  sm:px-10 md:px-16 lg:px-24 xl:px-28   ${hasScrolled ? "bg-background/90 " : "bg-transparent"} fixed z-100 flex items-center justify-between  w-full h-auto top-0 py-3  animate-fade-in-delay-7 `} >
+        <nav className={` px-8  sm:px-10 md:px-16 lg:px-24 xl:px-28   ${hasScrolled ? "bg-background/90 " : "bg-transparent"} fixed z-100 flex items-center justify-between  w-full h-auto top-0 py-3  animate-fade-in-delay-2 `} >
 
             {/* Logo and branding linking to homepage */}
             <Link className="cursor-default text-[1.3rem]   md:text-2xl lg:text-[1.7rem] xl:text-[1.9rem] 2xl:text-3xl" to={"/"}>

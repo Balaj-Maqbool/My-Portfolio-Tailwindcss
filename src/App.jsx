@@ -1,17 +1,23 @@
+import React from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "./pages/Home"
-import PageNotFound from "./pages/PageNotFound"
+const Home = React.lazy(() => import("./pages/Home"))
+const PageNotFound = React.lazy(() => import("./pages/PageNotFound"))
 import { Toaster } from "./components/ui/toaster.jsx" // Notification/toast container
-import Hero from "./components/Hero/Hero.jsx"
+
+
+
+
 
 const App = () => {
+
+
   return (
     <>
       {/* Global toast notifications */}
       <Toaster />
-
       {/* App routing */}
       <BrowserRouter>
+
         <Routes>
           {/* Default homepage */}
           <Route index element={<Home />} />
