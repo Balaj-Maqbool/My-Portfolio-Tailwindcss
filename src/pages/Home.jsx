@@ -17,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     // Show loading screen for 5 seconds, then hide
-    const timer = setTimeout(() => setShowLoading(false), 4000);
+    const timer = setTimeout(() => setShowLoading(false), 4500);
     return () => clearTimeout(timer);
   }, []);
 
