@@ -14,7 +14,7 @@ const ContactInfoCard = ({ info }) => {
       rel="noopener noreferrer" // Security best practice for external links
       className={`
         ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"} 
-        transition-all ease-linear duration-1000 z-50 
+        transition-all ease-linear duration-500 z-50 
         flex justify-start sm:flex-col md:flex-row sm:h-full 
         w-[90%] space-x-3 sm:space-x-0 md:w-[90%] lg:w-[65%] p-2
       `}
