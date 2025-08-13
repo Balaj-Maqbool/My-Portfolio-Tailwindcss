@@ -12,7 +12,3 @@ ReactDom.createRoot(document.getElementById("root")).render(
   </ThemeProvider>
 )
 
-// Register service worker for offline support (PWA)
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js");
-}
