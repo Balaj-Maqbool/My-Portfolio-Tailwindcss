@@ -16,7 +16,7 @@ const Hero = () => {
         <section  id='hero' className={` min-h-screen min-w-screen z-50   flex flex-col flex-center md:flex-row `}>
 
             {/* Left content area with intro text, centered vertically and horizontally */}
-            <div ref={headingRef} className={`${headingIsVisible?"animate-when-visible":"animate-when-invisible"} transition-all ease-linear duration-700 md:min-h-screen  min-w-[60%] z-50 md:pb-10 md:py-0 pb-12  flex flex-col flex-center space-y-3 `}>
+            <div ref={headingRef} className={`${headingIsVisible?"will-change-[transform,opacity] animate-when-visible":"will-change-auto animate-when-invisible"} transition-all ease-linear duration-700 md:min-h-screen  min-w-[60%] z-50 md:pb-10 md:py-0 pb-12  flex flex-col flex-center space-y-3 `}>
 
                 {/* Main heading with animated text spans */}
                 <HeroHeading />
@@ -32,7 +32,7 @@ const Hero = () => {
 
             {/* Uncomment below if you want to add profile image */}
             <div className='flex  flex-center bg-transparent  w-full  sm:py-3 md:py-15 max-sm:pb-0  md:min-h-screen md:min-w-[40%]'>
-                <img ref={pictureRef} src="/img-07.jpg" loading='lazy' alt="Balaj Maqbool Profile Pic" className={`${pictureIsVisible?"animate-when-visible":"animate-when-invisible"} transition-all duration-700 ease-in-out profile-image object-cover bg-transparent`}></img>
+                <img ref={pictureRef} src="/img-07.jpg" loading='lazy' alt="Balaj Maqbool Profile Pic" className={`${pictureIsVisible?"will-change-[transform,opacity] animate-when-visible":" will-change-auto animate-when-invisible"} transition-all duration-700 ease-in-out profile-image object-cover bg-transparent`}></img>
             </div>
 
             {/* Scroll down indicator positioned absolute at bottom with animation */}
