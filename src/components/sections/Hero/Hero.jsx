@@ -16,7 +16,7 @@ const Hero = () => {
         <section  id='hero' className={` min-h-screen min-w-screen z-50   flex flex-col flex-center md:flex-row `}>
 
             {/* Left content area with intro text, centered vertically and horizontally */}
-            <div ref={headingRef} className={`${headingIsVisible?"will-change-[transform,opacity] animate-when-visible":"will-change-auto animate-when-invisible"} transition-all ease-linear duration-700 md:min-h-screen  min-w-[60%] z-50 md:pb-10 md:py-0 pb-12  flex flex-col flex-center space-y-3 `}>
+            <div ref={headingRef} className={`${headingIsVisible?"will-change-[transform,opacity] animate-when-visible":"will-change-auto animate-when-invisible"} transition-all ease-linear duration-700 md:min-h-screen  min-w-[60%] z-50 md:pb-10 md:py-12 pb-12  flex flex-col flex-center space-y-3 `}>
 
                 {/* Main heading with animated text spans */}
                 <HeroHeading />
