@@ -37,7 +37,7 @@ const Hero = () => {
 
             {/* Scroll down indicator positioned absolute at bottom with animation */}
             <div aria-hidden='true' className=' combo-animation  p-2 z-60  absolute  bottom-0  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
-                <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono gradient-text-blue md:gradient-text-grey  '>scroll</p>
+                <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text  '>scroll</p>
                 <ArrowDown size={25} className='text-accent font-sans' />
             </div>
         </section>
