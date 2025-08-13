@@ -15,12 +15,15 @@ const ProjectCards = ({ project }) => {
             {/* Project Image Container */}
             <div className='w-full h-[100px] xs:h-[115px] sm:h-[100px] sm2:h-[120px] md:h-[110px] md2:h-[120px] lg:h-[130px] xl:h-[140px] rounded-t-md overflow-hidden'>
                 {/* Project Image with smooth zoom on hover/focus */}
-                <img
-                    className='w-full h-full object-cover hover:scale-110 focus:scale-110 transition-all ease-in duration-500'
-                    src={project.imageAddress}
-                    alt={project.title}
-                    loading="lazy"
-                />
+                <picture>
+                    <source srcSet={project.imageAddress.replace('.png', '.webp')} type='image/webp' />
+                    <img
+                        className='w-full h-full object-cover hover:scale-110 focus:scale-110 transition-all ease-in duration-500'
+                        src={project.imageAddress}
+                        alt={project.title}
+                        loading="lazy"
+                    />
+                </picture>
             </div>
 
             {/* Project Tags */}
