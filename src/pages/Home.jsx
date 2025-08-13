@@ -36,14 +36,14 @@ const Home = () => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Balaj Maqbool | Web Developer Portfolio" />
         <meta property="og:description" content="Explore my projects and skills as a passionate web developer." />
-        <meta property="og:image" content="https://balaj-maqbool-portfolio.vercel.app/preview.png" />
-        <meta property="og:url" content="https://balaj-maqbool-portfolio.vercel.app/" />
+        <meta property="og:image" content="https://balaj-maqbool.vercel.app/letter-b.jpg" />
+        <meta property="og:url" content="https://balaj-maqbool.vercel.app/" />
 
         {/* Twitter meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Balaj Maqbool | Web Developer Portfolio" />
         <meta name="twitter:description" content="Explore my projects and skills as a passionate web developer." />
-        <meta name="twitter:image" content="https://balaj-maqbool-portfolio.vercel.app/preview.png" />
+        <meta name="twitter:image" content="https://balaj-maqbool.vercel.app/letter-b.jpg" />
       </Helmet>
 
       {/* Loading screen displayed initially */}
