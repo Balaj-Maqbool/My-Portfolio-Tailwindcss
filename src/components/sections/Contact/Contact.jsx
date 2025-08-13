@@ -26,7 +26,11 @@ const Contact = () => {
         e.preventDefault()
         setSendingMessage(true)
 
-        emailjs.sendForm("service_28kqrgb", "template_m58uywc", form.current, "ssjfoFUOO32br1QPz")
+        const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        emailjs.sendForm(serviceID, templateID, form.current, publicKey)
             .then(() => {
                 // Success toast
                 toast({
