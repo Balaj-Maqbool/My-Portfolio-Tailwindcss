@@ -7,6 +7,7 @@ const urlsToCache = [
   '/letter-b.jpg' // your icon/images
 ];
 
+
 // Install event - cache files
 self.addEventListener('install', (event) => {
   event.waitUntil(
