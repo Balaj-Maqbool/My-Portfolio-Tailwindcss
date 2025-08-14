@@ -3,7 +3,7 @@ import useInView from '@/hooks/IntersectionObserver'
 
 const ProjectCards = ({ project }) => {
     // Observe when card enters viewport with 40% threshold
-    const { ref, isVisible } = useInView({ threshold: .4 })
+    const { ref, isVisible } = useInView({ threshold: .4,rootMargin:"-100px 0px 0px 0px" })
 
     return (
         <div

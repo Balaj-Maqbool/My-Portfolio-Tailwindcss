@@ -15,7 +15,7 @@ export const ScrollProvider = ({ children }) => {
   const handleScroll = () => {
     setHasScrolled(window.scrollY > 100);
     setIsVisible(window.scrollY > 900);
-    setArrowDown(window.scrollY > 200)
+    setArrowDown(window.scrollY < 200)
 
   };
 

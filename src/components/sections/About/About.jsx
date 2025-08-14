@@ -5,9 +5,9 @@ import AboutCards from "./AboutCards.jsx";
 
 const About = () => {
     // Hook to track visibility of text section with Intersection Observer
-    const { ref, isVisible } = useInView({ threshold: .3, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
+    const { ref, isVisible } = useInView({ threshold: .4, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
     // Hook to track visibility of card container section
-    const { ref: cardContaineRef, isVisible: isCardContainerVisible } = useInView({ threshold: .4, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
+    const { ref: cardContainerRef, isVisible: isCardContainerVisible } = useInView({ threshold: .4, rootMargin: "-100px 0px 0px 0px", triggerOnce: true })
 
     return (
         <section id='about' className={`  p-5 relative min-h-screen pt-20 z-50`}>
@@ -33,7 +33,7 @@ const About = () => {
                 </div>
 
                 {/* Cards container with fade & scale animation */}
-                <div ref={cardContaineRef} className={` ${isCardContainerVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-linear duration-700 flex flex-col flex-center space-y-3.5`}>
+                <div ref={cardContainerRef} className={` ${isCardContainerVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-linear duration-700 flex flex-col flex-center space-y-3.5`}>
                     {/* Render about cards using AboutCards component */}
                     {
                         aboutCards.map((card, index) => {

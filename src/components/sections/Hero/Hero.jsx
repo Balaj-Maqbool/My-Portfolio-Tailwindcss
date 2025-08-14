@@ -8,8 +8,8 @@ import { ScrollContext } from '@/context/ScrollContext'
 const Hero = () => {
     const { arrowDown } = useContext(ScrollContext)
     const heroButtonRef = useRef(null)
-    const { ref: headingRef, isVisible: headingIsVisible, } = useInView({ threshold: .6, rootMargirn: '-50px 0px 0px 0px' })
-    const { ref: pictureRef, isVisible: pictureIsVisible, } = useInView({ threshold: .5, rootMargirn: '-50px 0px 0px 0px' })
+    const { ref: headingRef, isVisible: headingIsVisible, } = useInView({ threshold: .5, rootMargin: '-100px 0px 0px 0px' })
+    const { ref: pictureRef, isVisible: pictureIsVisible, } = useInView({ threshold: .5, rootMargin: '-100px 0px 0px 0px' })
 
     useWillChangeOnAnimation({ ref: heroButtonRef, willChangeClass: "will-change-[transform,opacity]", animationDelay: 6000 })
 
@@ -39,7 +39,7 @@ const Hero = () => {
 
             {/* Scroll down indicator positioned absolute at bottom with animation */}
             {
-                !arrowDown && <div aria-hidden='true' className=' combo-animation  p-2 z-60  absolute  bottom-0  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
+                arrowDown && <div aria-hidden='true' className=' combo-animation  p-2 z-60  absolute  bottom-0  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
                     <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text  '>scroll</p>
                     <ArrowDown size={25} className='text-accent font-sans' />
                 </div>

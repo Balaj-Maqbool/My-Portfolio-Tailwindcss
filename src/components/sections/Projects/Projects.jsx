@@ -7,7 +7,8 @@ import useInView from '@/hooks/IntersectionObserver.js'
 
 const Projects = () => {
   // Hook to track if section is in viewport (20% visibility)
-  const { ref, isVisible } = useInView(.2)
+  const { ref, isVisible } = useInView({ threshold: .2 })
+  const { ref: buttonRef, isVisible: IsButtonVisible } = useInView({ threshold: .2 })
 
   return (
     <section id='projects' className={`min-h-screen  p-5 relative  pt-20 z-50`}>
@@ -46,7 +47,7 @@ const Projects = () => {
       </div>
 
       {/* Button linking to your GitHub */}
-      <div className='flex flex-center p-3 mt-3'>
+      <div ref={buttonRef} className={`${IsButtonVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-in-out duration-700 flex flex-center p-3 mt-3`}>
         <a
           href="https://github.com/balaj-maqbool"
           target='_blank'
