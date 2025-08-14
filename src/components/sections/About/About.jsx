@@ -28,7 +28,7 @@ const About = () => {
                     {/* Buttons for contact and CV download */}
                     <div className='flex flex-center space-x-3 max-w-full  py-3 mt-5 text-text'>
                         <a className='cosmic-button-primary text-[.8] px-3.5  md:px-7 md:font-medium ' href="#footer">Get in Touch</a>
-                        <a href="assets/BalajMaqbool_CV.pdf" download={true} className='cosmic-button-secondary'>Download CV</a>
+                        <a href="assets/Balaj_Maqbool_CV.pdf" download={true} className='cosmic-button-secondary'>Download CV</a>
                     </div>
                 </div>
 
