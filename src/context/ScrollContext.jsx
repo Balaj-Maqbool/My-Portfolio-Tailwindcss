@@ -9,11 +9,14 @@ export const ScrollProvider = ({ children }) => {
 
   // Track if user scrolled more than 900px (e.g., to show "scroll to top" button)
   const [isVisible, setIsVisible] = useState(false);
+  const [arrowDown, setArrowDown] = useState(false)
 
   // Scroll event handler to update scroll states
   const handleScroll = () => {
     setHasScrolled(window.scrollY > 100);
     setIsVisible(window.scrollY > 900);
+    setArrowDown(window.scrollY > 200)
+
   };
 
   useEffect(() => {
@@ -28,7 +31,7 @@ export const ScrollProvider = ({ children }) => {
 
   // Provide scroll states and setters to all child components
   return (
-    <ScrollContext.Provider value={{ hasScrolled, setHasScrolled, isVisible, setIsVisible }}>
+    <ScrollContext.Provider value={{ hasScrolled, setHasScrolled, isVisible, setIsVisible ,arrowDown}}>
       {children}
     </ScrollContext.Provider>
   );
