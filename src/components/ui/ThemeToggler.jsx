@@ -11,11 +11,11 @@ const ThemeToggler = () => {
   const handleTheme = (e) => {
     e.preventDefault()
     setIsDark(!isDark) // toggle state
-    document.documentElement.classList.toggle("dark") // toggle dark class on html root
+    document.documentElement.classList.toggle("light") // toggle dark class on html root
   }
 
   return (
-    <div className=" hidden w-auto h-auto " >
+    <div className="  w-auto h-auto " >
       {/* button to toggle theme, shows sun if dark, moon if light */}
       <button onClick={handleTheme} className="p-2  duration-1000" aria-label="Theme Toggler">{
         isDark ? <Sun className="text-icon " /> : <Moon className="text-icon hover:text-blue-800 hover:text-glow" />

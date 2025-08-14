@@ -10,12 +10,12 @@ export const ThemeProvider = ({ children }) => {
 
   // On initial mount, add "dark" class to root element if dark mode is enabled
   useEffect(() => {
-    if (isDark) document.documentElement.classList.add("dark");
+    if (!isDark) document.documentElement.classList.add("light");
   }, []);
 
   // Whenever isDark changes, save theme preference in localStorage
   useEffect(() => {
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    localStorage.setItem("theme", isDark ? "" : "light");
   }, [isDark]);
 
   // Provide theme state and updater function to children components
