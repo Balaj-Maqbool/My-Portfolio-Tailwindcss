@@ -45,7 +45,7 @@ const Skills = () => {
       </div>
 
       {/* Skills Grid - responsive columns from 1 up to 5 */}
-      <div className="grid grid-cols-3  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 px-4 sm:px-5 sm2:px-10 xl:grid-cols-5 lg:px-24 md:py-5 lg:py-10 max-sm:gap-y-5 gap-2 sm:gap-5 md:gap-7 lg:gap-10">
+      <div className="grid grid-cols-3  sm2:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 px-4 sm:px-5 sm2:px-10  lg:px-24 md:py-5 lg:py-10 max-sm:gap-y-5 gap-2 sm:gap-5 md:gap-7 lg:gap-10">
         {selectedSkills.map((skill, index) => (
           // Render each skill card; key uses index + color + id to avoid duplicates
           <SkillCards key={`${index + skill.name}`} skill={skill} />
