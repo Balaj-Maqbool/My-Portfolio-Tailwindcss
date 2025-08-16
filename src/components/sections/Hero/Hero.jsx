@@ -1,12 +1,12 @@
 import { ArrowDown } from 'lucide-react'
-import { useContext, useRef } from 'react'
+import {  useRef } from 'react'
 import useWillChangeOnAnimation from "@/hooks/useWillChangeOnAnimation.js"
 import HeroHeading from './HeroHeading'
 import HeroIntro from './HeroIntro'
 import useInView from "@/hooks/IntersectionObserver.js"
-import { ScrollContext } from '@/context/ScrollContext'
+
 const Hero = () => {
-    const { arrowDown } = useContext(ScrollContext)
+   
     const heroButtonRef = useRef(null)
     const { ref: headingRef, isVisible: headingIsVisible, } = useInView({ threshold: .5, rootMargin: '-100px 0px 0px 0px' })
     const { ref: pictureRef, isVisible: pictureIsVisible, } = useInView({ threshold: .5, rootMargin: '-100px 0px 0px 0px' })
@@ -38,12 +38,10 @@ const Hero = () => {
             </div>
 
             {/* Scroll down indicator positioned absolute at bottom with animation */}
-            {
-                arrowDown && <div aria-hidden='true' className=' combo-animation  p-2 z-60  absolute  bottom-0  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
+            <div aria-hidden='true' className=' combo-animation  p-2 z-60  absolute  bottom-0  md:bottom-10 flex flex-col flex-center space-y-2  transition-all duration-1000 '>
                     <p className=' text-[.75rem] sm:text-sm xl:text-[1rem] font-mono text-text  '>scroll</p>
                     <ArrowDown size={25} className='text-accent font-sans' />
                 </div>
-            }
 
         </section>
     )
