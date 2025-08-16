@@ -14,7 +14,7 @@ import { Helmet } from 'react-helmet';
 
 const Home = () => {
 
-  const [showLoading, setShowLoading] = useState(true);
+  const [showLoading, setShowLoading] = useState(false);
 
   useEffect(() => {
     // Show loading screen for 5 seconds, then hide

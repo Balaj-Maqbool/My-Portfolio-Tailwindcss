@@ -260,8 +260,8 @@
   }
 
   /* Slide animations */
-  --animate-slide-in-right: slideInRight forwards 1s;
-  --animate-slide-in-left: slideOutLeft forwards 1s;
+  --animate-slide-in-right: slideInRight ease-in-out 1s ;
+  --animate-slide-in-left: slideOutLeft ease-in-out 1s ;
 
   @keyframes slideInRight {
     0% {
