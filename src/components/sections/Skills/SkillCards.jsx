@@ -19,7 +19,7 @@ const SkillCards = ({ skill}) => {
     >
       {/* Skill name */}
       
-      <img loading='lazy'  src={skill.icon} alt={""}  className=' size-11 sm2:size-14 md:size-16 bg-transparent' />
+      <img loading='lazy'  src={skill.icon} alt={""}  className=' bg-box size-11 sm2:size-14 md:size-16' />
       <h3 className="text-center text-[.75rem] sm:text-[.67rem] md:pb-2 md:text-sm ">
         {skill.name}
       </h3>
