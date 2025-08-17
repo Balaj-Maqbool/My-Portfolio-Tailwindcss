@@ -2,7 +2,7 @@
   "name": "Balaj Maqbool Portfolio",
   "short_name": "Balaj Portfolio",
   "start_url": "/",
-  "theme_color": "#338a93",
+  "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",
   "icons": [

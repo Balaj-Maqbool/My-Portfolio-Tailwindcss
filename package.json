@@ -1,7 +1,7 @@
 {
   "name": "balaj-maqbool-portfolio",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "A personal portfolio built with React and Tailwind CSS, showcasing projects, skills, and contact info.",
   "author": "Balaj Maqbool",
