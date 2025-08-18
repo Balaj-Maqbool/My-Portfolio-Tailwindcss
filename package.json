@@ -13,7 +13,13 @@
   "bugs": {
     "url": "https://github.com/Balaj-Maqbool/My-Portfolio-Tailwindcss/issues"
   },
-  "keywords": ["portfolio", "react", "tailwindcss", "frontend", "web-development"],
+  "keywords": [
+    "portfolio",
+    "react",
+    "tailwindcss",
+    "frontend",
+    "web-development"
+  ],
   "license": "MIT",
   "engines": {
     "node": ">=18",
@@ -37,6 +43,7 @@
   "dependencies": {
     "@radix-ui/react-toast": "^1.2.14",
     "@tailwindcss/vite": "^4.1.11",
+    "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",

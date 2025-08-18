@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 const Home = React.lazy(() => import("@/pages/Home"))
 const PageNotFound = React.lazy(() => import("@/pages/PageNotFound"))
 import { Toaster } from "@/components/ui/toaster.jsx" // Notification/toast container
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 
 
@@ -25,6 +25,7 @@ const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      <SpeedInsights/>
     </>
   )
 }
