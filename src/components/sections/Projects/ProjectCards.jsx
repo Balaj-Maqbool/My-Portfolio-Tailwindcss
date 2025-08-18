@@ -22,6 +22,8 @@ const ProjectCards = ({ project }) => {
                         src={project.imageAddress}
                         alt={project.title}
                         loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
                     />
                 </picture>
             </div>
