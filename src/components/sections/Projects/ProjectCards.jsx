@@ -47,7 +47,7 @@ const ProjectCards = ({ project }) => {
             </h3>
 
             {/* Project Description */}
-            <p className='px-5 max-sm:pb-3 h-18 sm:h-20 md:h-25 text-text/60 text-[.65rem] md:text-[.75rem] font-sans'>
+            <p className='px-5 max-sm:pb-3 h-18 sm:h-20 md:h-25 text-text/60 text-[.7rem] md:text-[.75rem] font-sans'>
                 {project.description}
             </p>
 
