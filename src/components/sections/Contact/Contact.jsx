@@ -93,11 +93,11 @@ const Contact = () => {
                 </div>
 
                 {/* Contact Form */}
-                <div ref={infoRef} className={`${infoIsVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-in-out duration-700 flex justify-start items-center lg:pb-5 md:pr-[15%] lg:pr-[35%]`}>
+                <div ref={infoRef} className={`${infoIsVisible ? "animate-when-visible" : "animate-when-invisible"} transition-all ease-in-out duration-700 flex justify-start items-center  lg:pb-5 md:pr-[15%] lg:pr-[35%]`}>
                     <div className='flex flex-col items-center space-y-3 h-full w-full rounded-md py-5 lg:py-7 bg-box'>
                         <h3 className='text-text font-sans text-[1.15rem] md:text-[1.35rem]'>Send a Message</h3>
                         <form
-                            className="text-sm w-full h-full px-7 pt-3 flex flex-col space-y-6"
+                            className="text-sm w-full h-full px-7 pb-5 pt-3 flex flex-col space-y-6"
                             ref={form}
                             onSubmit={handleSubmit}
                         >
