@@ -97,7 +97,7 @@ const Contact = () => {
                     <div className='flex flex-col items-center space-y-3 h-full w-full rounded-md py-5 lg:py-7 bg-box'>
                         <h3 className='text-text font-sans text-[1.15rem] md:text-[1.35rem]'>Send a Message</h3>
                         <form
-                            className="text-sm w-full h-full px-7 pb-5 pt-3 flex flex-col space-y-6"
+                            className="text-sm w-full h-full px-7 sm:pb-5 sm2:pb-1 pt-3 flex flex-col space-y-6"
                             ref={form}
                             onSubmit={handleSubmit}
                         >
