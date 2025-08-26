@@ -87,7 +87,7 @@ const Contact = () => {
                 {/* Contact Info Cards */}
                 <div className='flex flex-col flex-center space-y-3 py-5'>
                     <h3 className='text-text font-normal text-[1.1rem] md:text-xl'>Contact Information</h3>
-                    <div className='flex flex-col sm:flex-row md:flex-col sm:justify-around items-center md:space-y-3 min-w-full md:min-w-[90%] lg:ml-0 md:min-h-[90%]'>
+                    <div className='flex flex-col items-center md:space-y-3 min-w-full md:min-w-[90%] lg:ml-0 md:min-h-[90%]'>
                         {contactInfo.map((info) => <ContactInfoCard key={info.id} info={info} />)}
                     </div>
                 </div>
